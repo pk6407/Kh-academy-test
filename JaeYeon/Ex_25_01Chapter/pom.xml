@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ex01</groupId>
+  <artifactId>Ex_25_01Chapter</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>kh-jdbc-explame-2</name>
+  <description>뭔가있음</description>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+<dependencies>
+<!-- https://mvnrepository.com/artifact/com.oracle.ojdbc/ojdbc10_g -->
+<dependency>
+    <groupId>com.oracle.ojdbc</groupId>
+    <artifactId>ojdbc10_g</artifactId>
+    <version>19.3.0.0</version>
+</dependency>
+</dependencies>
+</project>
