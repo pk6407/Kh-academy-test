@@ -9,6 +9,7 @@ public class a {
 			for(int j = a; j<a; j++) {		
 			System.out.println("*");
 		}
+			System.out.println("");
 		}
 	}
 
