@@ -9,9 +9,9 @@
 # 1.1원인
 
 ```sql
-1. product 테이브에 UNIQUE (serial_no) 를 요구하고 있으나 걸려있지 않음
-2. SEQ_BRAND_ID 시퀀스가 MAXVALUE 1000 으로 기술되어 있었지만. 생성시 500으로 생성하고 있었음
-3. 애플을 INSERT 하는 부분에서 NEXTVAL 가 아닌 CURRVAL 가 작성되어있음
+1. product 테이블 정의서에는 sold_out` 제약조건이 표시되어 있으나 SQL 작성 시 제약조건을 설정하지 않음
+2.seq_brand_id 시퀀스의 요구사항은 MAXVALUE 1000 이지만 작성한 SQL문은 500으로 잘못 작성하여 요구사항 불충족 문제 발생
+3.brands 테이블에 '애플' 데이터 삽입 시 seq_brand_id.CURRVAL를 작성했기 때문에 앞서 실행된 '삼성' INSERT구문에 NEXTVAL와 같은 값이 반환 되어 PRIMARY KEY가 중복되는 문제 발생
 
 
 키워드 UNIQUE , NEXTVAL , CURRVAL , MAXVALUE
@@ -22,11 +22,15 @@
 # 1.2조취
 
 ```sql
-1. ALTHER TABLE products ADD UNIQUE (serial_no);
-2. ALTHER SEQUENCE seq_brand_id MAXVALUE 1000;
-3. 시퀀스 CURRAVAL 를 NEXTVAL 로 변경 
-
-키워드 : ALTER , MAXVALUE , CURRVAL ,NEXTVAL
+1.products 테이블의 serial_no 컬럼을 테이블 정의서 조건에 맞게 UNIQUE 제약조건 추가.
+ALTER TABLE products ADD UNIQUE(serial_no);
+2.seq_brand_id 시퀀스의 MAXVALUE 값을 요구사항에 맞게 1000으로 수정
+ALTER SEQUENCE seq_brand_id MAXVALUE 1000;
+3.'애플' 브랜드 데이터 삽입 구문의 CURRVAL을 NEXTVAL로 수정하여 INSERT 수행
+INSERT INTO brands VALUES (seq_brand_id.NEXTVAL, '애플');
+4.INSERT를 실패했던 '아이폰9S', '아이폰10S' INSERT 문장 다시 실행
+INSERT INTO products VALUES (seq_product_no.NEXTVAL, '아이폰9S', 900000, 200, '9S','N');
+INSERT INTO products VALUES (seq_product_no.NEXTVAL, '아이폰10S', 1000000, 200, '10S','N');
 ```
 
 
