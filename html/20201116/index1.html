@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout tutorial</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <style>
+            *, *::before, *::after {
+                box-sizing: border-box;
+            }
+
+            html, body {
+                margin: 0;
+                font-family: 'Noto Sans JP', sans-serif;
+                line-height: 1.6;
+            }
+
+            .hero {
+                background-image: 
+                    url('https://raw.githubusercontent.com/hyeyoom/kh-lecture-2020/master/layout/img/bg.jpeg'),
+                    radial-gradient(#ccc, #111);
+                background-blend-mode: multiply;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-position: center center;
+                height: 100vh;                
+                color: white;
+                padding-top: 35rem
+            }
+
+            h1, p, blockquote {
+                margin: 0;
+            }
+
+            .container {
+                width: 85%;
+                max-width: 65em;
+                margin: 0 auto
+            }
+
+            .primary-title {
+                font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+            }
+
+            .article-spacing{
+                margin-top: 5rem;
+                width: 40%;
+            }
+
+            .article-spacing > h1 {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .article-spacing > p, blockquote {
+                font-size: 1.3rem;
+                text-indent: 1rem;
+                margin-bottom: 2.4rem;
+            }
+
+            .article-spacing > blockquote {
+                padding-left: 1rem;
+                border-left: 5px solid black;
+                background-color: #f5f5f5;
+            }
+
+            .article-spacing > p:hover {
+                background-color: rgba(0, 0, 0, 0.9);
+                cursor: pointer;
+            }
+
+            .image-box {
+                margin-bottom: 1.2rem;
+                text-align: center;
+            }
+
+            .image-box > p {
+                color: #555555;
+            }
+            
+            .image-box > img {
+                filter: brightness(90%);
+                width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .image-box > img:hover {
+                filter: none;
+                cursor: pointer;
+            }
+
+            footer {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="hero">
+            <div class="container">
+                <h1 class="primary-title">제목같은거 여기에</h1>
+                <p>서브타이틀</p>
+                <p>Mon Nov 16 2020 14:03:54 GMT+0900 </p>
+            </div>
+        </header>
+        <main>
+            <article>
+                <div class="container article-spacing">
+                    <h1>👀제목1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pulvinar velit id sem porttitor pellentesque. Donec venenatis sit amet massa sed aliquet. Phasellus convallis, metus eu scelerisque placerat, massa sapien eleifend diam, sollicitudin faucibus nisi leo sit amet neque. Praesent ac risus nec nulla tristique bibendum. Vestibulum non vehicula enim. Aenean cursus augue vitae nisi cursus viverra. Ut ut lacus tincidunt, tincidunt augue a, laoreet velit. Nam egestas auctor erat in malesuada. Nulla nec ipsum interdum, luctus lorem id, blandit neque. Praesent congue semper ante. Vestibulum tortor ex, euismod vel dolor a, porttitor consectetur orci. Nunc euismod dictum aliquet. Aenean et posuere odio.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pulvinar velit id sem porttitor pellentesque. Donec venenatis sit amet massa sed aliquet. Phasellus convallis, metus eu scelerisque placerat, massa sapien eleifend diam, sollicitudin faucibus nisi leo sit amet neque. Praesent ac risus nec nulla tristique bibendum. Vestibulum non vehicula enim. Aenean cursus augue vitae nisi cursus viverra. Ut ut lacus tincidunt, tincidunt augue a, laoreet velit. Nam egestas auctor erat in malesuada. Nulla nec ipsum interdum, luctus lorem id, blandit neque. Praesent congue semper ante. Vestibulum tortor ex, euismod vel dolor a, porttitor consectetur orci. Nunc euismod dictum aliquet. Aenean et posuere odio.</p>
+                    <blockquote>
+                        <p>니 주제에?</p>
+                        <p>풉키풉키 오리 바부</p>
+                    </blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pulvinar velit id sem porttitor pellentesque. Donec venenatis sit amet massa sed aliquet. Phasellus convallis, metus eu scelerisque placerat, massa sapien eleifend diam, sollicitudin faucibus nisi leo sit amet neque. Praesent ac risus nec nulla tristique bibendum. Vestibulum non vehicula enim. Aenean cursus augue vitae nisi cursus viverra. Ut ut lacus tincidunt, tincidunt augue a, laoreet velit. Nam egestas auctor erat in malesuada. Nulla nec ipsum interdum, luctus lorem id, blandit neque. Praesent congue semper ante. Vestibulum tortor ex, euismod vel dolor a, porttitor consectetur orci. Nunc euismod dictum aliquet. Aenean et posuere odio.</p>
+                    <h1>😜제목2</h1>
+                    <p>밤이 같이 풀이 언덕 별 하나에 별빛이 시인의 가난한 봅니다. 하나에 이국 동경과 가득 파란 오는 많은 듯합니다. 흙으로 다 하나 듯합니다. 이런 오면 별 우는 없이 하나에 별 비둘기, 버리었습니다. 이웃 나는 아스라히 이런 내일 하늘에는 풀이 못 버리었습니다. 나는 하나의 어머니, 하나에 이름을 걱정도 동경과 많은 당신은 봅니다. 이 노새, 내린 슬퍼하는 된 벌레는 거외다. 별이 다 이름과, 까닭입니다. 이웃 옥 그리고 버리었습니다.</p>
+                    <div class="img-box">
+                        <img src="data:image/jpeg;base64,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"/>
+                        <p>[이미지 설명]</p>
+                    </div>
+                    <p>밤이 같이 풀이 언덕 별 하나에 별빛이 시인의 가난한 봅니다. 하나에 이국 동경과 가득 파란 오는 많은 듯합니다. 흙으로 다 하나 듯합니다. 이런 오면 별 우는 없이 하나에 별 비둘기, 버리었습니다. 이웃 나는 아스라히 이런 내일 하늘에는 풀이 못 버리었습니다. 나는 하나의 어머니, 하나에 이름을 걱정도 동경과 많은 당신은 봅니다. 이 노새, 내린 슬퍼하는 된 벌레는 거외다. 별이 다 이름과, 까닭입니다. 이웃 옥 그리고 버리었습니다.</p>
+                    <p>밤이 같이 풀이 언덕 별 하나에 별빛이 시인의 가난한 봅니다. 하나에 이국 동경과 가득 파란 오는 많은 듯합니다. 흙으로 다 하나 듯합니다. 이런 오면 별 우는 없이 하나에 별 비둘기, 버리었습니다. 이웃 나는 아스라히 이런 내일 하늘에는 풀이 못 버리었습니다. 나는 하나의 어머니, 하나에 이름을 걱정도 동경과 많은 당신은 봅니다. 이 노새, 내린 슬퍼하는 된 벌레는 거외다. 별이 다 이름과, 까닭입니다. 이웃 옥 그리고 버리었습니다.</p>
+                    <p>밤이 같이 풀이 언덕 별 하나에 별빛이 시인의 가난한 봅니다. 하나에 이국 동경과 가득 파란 오는 많은 듯합니다. 흙으로 다 하나 듯합니다. 이런 오면 별 우는 없이 하나에 별 비둘기, 버리었습니다. 이웃 나는 아스라히 이런 내일 하늘에는 풀이 못 버리었습니다. 나는 하나의 어머니, 하나에 이름을 걱정도 동경과 많은 당신은 봅니다. 이 노새, 내린 슬퍼하는 된 벌레는 거외다. 별이 다 이름과, 까닭입니다. 이웃 옥 그리고 버리었습니다.</p>
+                    <p>밤이 같이 풀이 언덕 별 하나에 별빛이 시인의 가난한 봅니다. 하나에 이국 동경과 가득 파란 오는 많은 듯합니다. 흙으로 다 하나 듯합니다. 이런 오면 별 우는 없이 하나에 별 비둘기, 버리었습니다. 이웃 나는 아스라히 이런 내일 하늘에는 풀이 못 버리었습니다. 나는 하나의 어머니, 하나에 이름을 걱정도 동경과 많은 당신은 봅니다. 이 노새, 내린 슬퍼하는 된 벌레는 거외다. 별이 다 이름과, 까닭입니다. 이웃 옥 그리고 버리었습니다.</p>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <div class="footer">
+                <div class="container info-container">
+                    <div class="info-container-item">
+                        <h1>제목1</h1>
+                        <p>내용1</p>
+                    </div>
+                    <div class="info-container-item">
+                        <h1>제목2</h1>
+                        <p>내용2</p>
+                    </div>
+                    <div class="info-container-item">
+                        <h1>제목3</h1>
+                        <p>내용3</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

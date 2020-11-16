@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>브라우저 제어하기</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.2/purify.min.js" integrity="sha512-T6jx0SL5artICbQxeQCg3iToWGEuWM6P2XjNxP1vMI6fNtgIb3dnVD5gpd/pkQKoMfi1ygq5ezv/Z2VB3lLGtw==" crossorigin="anonymous"></script>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: cornflowerblue;
+            }
+
+            p {
+                background-color: crimson;
+                cursor: pointer;
+            }
+
+            span{
+                background-color: darkgoldenrod;
+            }
+        </style>
+
+        <!-- <style>
+            .box{
+                width: 100px;
+                height: 100px;
+            }
+
+            .b1 { background-color: coral;}
+            .b2 { background-color: cornflowerblue;}
+            .b3 { background-color: goldenrod;}
+        </style> -->
+    </head>
+    <body>
+        <div id="d">
+            <p id="p">
+                <span id="s">내용</span>같은거
+            </p>
+        </div>
+        <script>
+            const d = document.getElementById('d')
+            const p = document.getElementById('p')
+            const s = document.getElementById('s')
+
+            d.addEventListener('click', e => {
+                console.log('div 누름')
+            })
+
+            p.addEventListener('click', e => {
+                console.log('paragraph 누름')
+            })
+
+            s.addEventListener('click', e =>{
+                e.stopPropagation()
+                console.log('span 누름')
+            })
+        </script>
+        <!-- </script> --> 
+       <!-- <div id="boxbox" class="box">._.</div> 
+       <div id="boxbox" class="box">@_@</div>  -->
+        <!-- <script> -->
+            <!-- // const box = document.querySelector('#boxbox')
+            //     let x = 0
+            //     let y = 0
+            //     document.body.addEventListener('keydown', e => {
+            //         switch(e.key) {
+            //             case 'ArrowUp':
+            //             y -= 5
+            //             console.log('위')
+            //              break;
+            //          case 'ArrowDown':
+            //             y += 5
+            //             console.log('아래')
+            //              break;
+            //         case 'ArrowLeft':
+            //             x -= 5
+            //             console.log('좌')
+            //              break;
+            //         case 'ArrowRight':
+            //             x += 5
+            //             console.log('우')
+            //              break;
+            //     }
+            //     box.style.transform = `translate3d(${x}px, ${y}px, 0)`
+            // })
+            // const box = document.querySelector('#boxbox')
+            // document.body.addEventListener('keydown', e =>{
+            //     switch(e.key){
+            //         case `ArrowUp`:
+            //         console.log('위')
+            //         break;
+            //         case 'ArrowDown':
+            //         console.log('아래')
+            //         break;
+            //         case 'ArrowLeft':
+            //         console.log('좌')
+            //         break;
+            //         case 'ArrowRight':
+            //         console.log('우')
+            //         break;
+            //     }
+            // })
+            // document.body.addEventListener('keypress', e => {
+            //     const currentValue = box.innerText
+            //     box.innerText = currentValue + e.key
+            // }) -->
+        <!-- </script> -->
+
+        <!-- <script>
+            function handleClick(){
+                alert('클릭했음')
+            }
+        </script>
+        <div ondblclick="handleClick()" class="box">._.</div> -->
+        <!-- <ul id="root">
+            <li>1뎁스 - 1</li>
+            <li>1뎁스 - 2</li>
+            <li>1뎁스 - 3</li>
+            <li>1뎁스 - 4</li>
+            <ul>
+                <li>2뎁스 - 1</li>
+                <li>2뎁스 - 2</li>
+                <ul>
+                    <li>3뎁스 - 1</li>
+                    <li>3뎁스 - 2</li>
+                    <li>3뎁스 - 3</li>
+                    <ul>
+                        <li>4뎁스 - 1</li>
+                        <li>4뎁스 - 2</li>
+                        <li>4뎁스 - 3</li>
+                    </ul>
+                </ul>
+            </ul>
+            <li>1뎁스 - 5</li>
+            <ul>
+                <li>2뎁스</li>
+            </ul>
+        </ul> -->
+        <!-- <div class='box b1'>box1</div>
+        <div class="box b2">box2</div>
+        <div class="box b3">box3</div>
+        <script>
+            // background-color
+            //backgrountColor
+        </script> -->
+    </body>
+</html>
