@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>니목숨은 여기까지다</title>
+        <style>
+            .header{
+                background-color: cornflowerblue;
+                padding: 15px;
+                text-align: center;
+            }
+  
+            .left-sidbar{
+                overflow: auto;
+                background-color:blue;
+                float: left;
+            
+            }
+            .menu {
+                float: left;
+                width: 20%;
+                text-align: center;
+            }
+            .menu >a {
+                background-color: red;
+                padding: 8px;
+                margin-top: 7px;
+                display: block;
+                width: 100%;
+                color:rgb(214, 154, 43);
+  
+            }
+            .main {
+                background-color: rgb(55, 163, 69);
+                float: left;
+                width: 60%;
+                padding: 0 20px; 
+  
+  
+            }
+            .rigth-siderbar{
+              background-color: rgb(201, 44, 16)31, 231, 45);
+                float: left;
+                width: 20%;
+                padding: 20px; 
+                margin-top: 7px;
+                text-align: center;
+            }
+  
+            @media (max-width: 600px;){
+                .left-sidbar,.main,.rigth-siderbar {
+                    width: 100%;
+                }
+            }
+          </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Hello Header</h1>
+        </div>
+
+        <div class="left-sidebar">
+            <div class="menu">
+                <a href="">link1</a>
+                <a href="">link2</a>
+                <a href="">link3</a>
+                <a href="">link4</a>
+            </div>
+        </div>
+
+        <div class="main">
+            <h1>본문</h1>
+            <p>무언가심각한글</p>
+        </div>
+
+        <div class="right-sidebar">
+            <h2>오른쪽에 떠있는 친구</h2>
+            <p>둥둥</p>
+        </div>
+    </body>
+</html>
