@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ㅇㅇ</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <style>
+            *, *::before, *::after {
+                box-sizing: border-box;
+            }
+
+            html, body {
+                margin: 0;
+                font-family: 'Noto Sans KR', sans-serif;
+                line-height: 1.6;
+            }
+
+            .hero {
+                background-image: 
+                    url('https://github.com/hyeyoom/kh-lecture-2020/blob/master/layout/img/bg.jpeg?raw=true'),
+                    radial-gradient(#ccc, #111);
+                background-repeat: no-repeat;
+                background-blend-mode: multiply;
+                background-position: center center;
+                height: 100vh;
+                color: white;
+                padding-top: 35rem;
+            }
+
+            h1, p, blockquote {
+                margin: 0;
+            }
+
+            .container {
+                width: 85%;
+                margin: 0 auto;
+                max-width: 65em;
+            }
+
+            .primary-title {
+                font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem)
+            }
+
+            .article-spacing {
+                margin-top: 5rem;
+                width: 40%;
+            }
+
+            .article-spacing > h1 {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .article-spacing > p, blockquote {
+                font-size: 1.3rem;
+                text-indent: 1rem;
+                margin-bottom: 2.4rem;
+            }
+
+            .article-spacing > blockquote {
+                padding-left: 2rem;
+                border-left: 5px solid black;
+            }
+
+            .image-box {
+                margin-bottom: 1.2rem;
+                text-align: center;
+            }
+
+            .image-box > p {
+                font-size: 1.2rem;
+                color: #555555;
+            }
+
+            .image-box > img {
+                cursor: pointer;
+                width: 85%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            footer {
+                background-color: rgba(0, 0, 0, 0.9);
+                color: white;
+                padding: 5rem 0;
+            }
+
+            .footer-container {
+                width: 60%;
+                margin: 0 auto;
+            }
+            
+            .info-container {
+                display: flex;
+                padding-bottom: 4em;
+                border-bottom: 2px solid white;
+            }
+
+            .info-item {
+                flex: 1 1 0;
+                padding: 0 1rem;
+            }
+
+            .info-item > h2 {
+                font-size: 1.5rem;
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            .info-item > p {
+                font-size: 0.8rem;
+            }
+
+            .logo-container {
+                margin-top: 3rem;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .menu-box {
+                display: flex;
+            }
+
+            .menu-box > h4 {
+                font-weight: 300;
+                padding: 0 0.7rem;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="hero">
+            <div class="container">
+                <h1 class="primary-title">제목</h1>
+                <p>서브제목</p>
+                <p>Tue Nov 17 2020 09:37:42 GMT+0900</p>
+            </div>
+        </header>
+        <main>
+            <article>
+                <div class="container article-spacing">
+                    <h1>😂제목1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et nisl aliquet, fermentum nibh eget, tempor dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam suscipit, diam at commodo malesuada, mauris sapien luctus libero, lobortis vestibulum massa libero luctus arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nisi ut justo facilisis faucibus. Vestibulum porttitor, mi in placerat iaculis, tortor lacus venenatis nisi, id faucibus risus justo ut lacus. Proin est nisi, auctor placerat ultricies quis, eleifend quis dui.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et nisl aliquet, fermentum nibh eget, tempor dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam suscipit, diam at commodo malesuada, mauris sapien luctus libero, lobortis vestibulum massa libero luctus arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nisi ut justo facilisis faucibus. Vestibulum porttitor, mi in placerat iaculis, tortor lacus venenatis nisi, id faucibus risus justo ut lacus. Proin est nisi, auctor placerat ultricies quis, eleifend quis dui.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et nisl aliquet, fermentum nibh eget, tempor dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam suscipit, diam at commodo malesuada, mauris sapien luctus libero, lobortis vestibulum massa libero luctus arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nisi ut justo facilisis faucibus. Vestibulum porttitor, mi in placerat iaculis, tortor lacus venenatis nisi, id faucibus risus justo ut lacus. Proin est nisi, auctor placerat ultricies quis, eleifend quis dui.</p>
+                    <blockquote>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                    </blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et nisl aliquet, fermentum nibh eget, tempor dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam suscipit, diam at commodo malesuada, mauris sapien luctus libero, lobortis vestibulum massa libero luctus arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nisi ut justo facilisis faucibus. Vestibulum porttitor, mi in placerat iaculis, tortor lacus venenatis nisi, id faucibus risus justo ut lacus. Proin est nisi, auctor placerat ultricies quis, eleifend quis dui.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et nisl aliquet, fermentum nibh eget, tempor dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam suscipit, diam at commodo malesuada, mauris sapien luctus libero, lobortis vestibulum massa libero luctus arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in nisi ut justo facilisis faucibus. Vestibulum porttitor, mi in placerat iaculis, tortor lacus venenatis nisi, id faucibus risus justo ut lacus. Proin est nisi, auctor placerat ultricies quis, eleifend quis dui.</p>
+                    <h1>😒제목2</h1>
+                    <p>별 그리고 하나의 하나에 까닭입니다. 이름과 잠, 어머님, 우는 있습니다. 하늘에는 별 노루, 내 위에 아스라히 나의 거외다. 불러 했던 별을 시와 사랑과 새겨지는 있습니다. 가득 나의 이웃 별들을 때 위에 봅니다. 한 경, 쓸쓸함과 오는 릴케 겨울이 지나가는 마디씩 계집애들의 까닭입니다. 이웃 이름과, 소녀들의 속의 나의 있습니다. 멀리 이네들은 별 추억과 봅니다. 가을 벌써 하나 이런 슬퍼하는 무덤 까닭입니다. 잔디가 어머니 별에도 파란 소학교 헤는 나의 가을로 어머니, 까닭입니다.</p>
+                    <p>별 그리고 하나의 하나에 까닭입니다. 이름과 잠, 어머님, 우는 있습니다. 하늘에는 별 노루, 내 위에 아스라히 나의 거외다. 불러 했던 별을 시와 사랑과 새겨지는 있습니다. 가득 나의 이웃 별들을 때 위에 봅니다. 한 경, 쓸쓸함과 오는 릴케 겨울이 지나가는 마디씩 계집애들의 까닭입니다. 이웃 이름과, 소녀들의 속의 나의 있습니다. 멀리 이네들은 별 추억과 봅니다. 가을 벌써 하나 이런 슬퍼하는 무덤 까닭입니다. 잔디가 어머니 별에도 파란 소학교 헤는 나의 가을로 어머니, 까닭입니다.</p>
+                    <div class="image-box">
+                        <img src="data:image/jpeg;base64,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">
+                        <p>복덩이들</p>
+                    </div>
+                    <p>별 그리고 하나의 하나에 까닭입니다. 이름과 잠, 어머님, 우는 있습니다. 하늘에는 별 노루, 내 위에 아스라히 나의 거외다. 불러 했던 별을 시와 사랑과 새겨지는 있습니다. 가득 나의 이웃 별들을 때 위에 봅니다. 한 경, 쓸쓸함과 오는 릴케 겨울이 지나가는 마디씩 계집애들의 까닭입니다. 이웃 이름과, 소녀들의 속의 나의 있습니다. 멀리 이네들은 별 추억과 봅니다. 가을 벌써 하나 이런 슬퍼하는 무덤 까닭입니다. 잔디가 어머니 별에도 파란 소학교 헤는 나의 가을로 어머니, 까닭입니다.</p>
+                    <p>별 그리고 하나의 하나에 까닭입니다. 이름과 잠, 어머님, 우는 있습니다. 하늘에는 별 노루, 내 위에 아스라히 나의 거외다. 불러 했던 별을 시와 사랑과 새겨지는 있습니다. 가득 나의 이웃 별들을 때 위에 봅니다. 한 경, 쓸쓸함과 오는 릴케 겨울이 지나가는 마디씩 계집애들의 까닭입니다. 이웃 이름과, 소녀들의 속의 나의 있습니다. 멀리 이네들은 별 추억과 봅니다. 가을 벌써 하나 이런 슬퍼하는 무덤 까닭입니다. 잔디가 어머니 별에도 파란 소학교 헤는 나의 가을로 어머니, 까닭입니다.</p>
+                    <p>별 그리고 하나의 하나에 까닭입니다. 이름과 잠, 어머님, 우는 있습니다. 하늘에는 별 노루, 내 위에 아스라히 나의 거외다. 불러 했던 별을 시와 사랑과 새겨지는 있습니다. 가득 나의 이웃 별들을 때 위에 봅니다. 한 경, 쓸쓸함과 오는 릴케 겨울이 지나가는 마디씩 계집애들의 까닭입니다. 이웃 이름과, 소녀들의 속의 나의 있습니다. 멀리 이네들은 별 추억과 봅니다. 가을 벌써 하나 이런 슬퍼하는 무덤 까닭입니다. 잔디가 어머니 별에도 파란 소학교 헤는 나의 가을로 어머니, 까닭입니다.</p>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <div class="footer-container">
+                <div class="info-container">
+                    <div class="info-item">
+                        <h2>Learn more.</h2>
+                        <p>Medium is an open platform where 170 million readers come to find insightful and dynamic thinking. Here, expert and undiscovered voices alike dive into the heart of any topic and bring new ideas to the surface. Learn more</p>
+                    </div>
+                    <div class="info-item">
+                        <h2>Make Medium yours.</h2>
+                        <p>Follow the writers, publications, and topics that matter to you, and you’ll see them on your homepage and in your inbox. Explore</p>
+                    </div>
+                    <div class="info-item">
+                        <h2>Share your thinking.</h2>
+                        <p>If you have a story to tell, knowledge to share, or a perspective to offer — welcome home. It’s easy and free to post your thinking on any topic. Write on Medium</p>
+                    </div>
+                </div>
+                <div class="logo-container">
+                    <div class="logo-box">
+                        <h1>로고로고</h1>
+                    </div>
+                    <div class="menu-box">
+                        <h4>About</h4>
+                        <h4>Help</h4>
+                        <h4>Legal</h4>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

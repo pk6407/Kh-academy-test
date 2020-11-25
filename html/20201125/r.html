@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>제목이여</title>
+        <style>
+            html, body{
+                margin: 0;
+            }
+
+            .box{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="box" class="box">
+            내용
+        </div>
+        <button id="btn">눌러봥</button>
+        <script>
+            // 1. id로 선택
+            // 1-1. document.getElementById('box')
+            // 1-2. document.querySelector('#box')
+            // DOM 선택
+            const box =
+            document.getElementById('box');
+            // DOM 조작
+            box.style.backgroundColor = 'blue'
+            console.log(box.innerText)
+            box.innerText = 'query selector'
+            const btn =
+            document.querySelector('#btn')
+            console.log(btn.innerText)
+
+            // 2. class로 선택
+            // 2-1. document.getElementsByClassName('box')
+            // 2-2. document.querySelectorAll('box')
+            const boxes = document.getElementsByClassName('box')
+            // 2번째 방법 const boxes = document.querySelectorAll('.box');
+            boxes[0].style.backgroundColor = 'cornflowerblue'
+
+            // 3. 태그 이름으로 선택
+            // 3-1. document.getElementsByTagName('div');
+            // 3-2. document.querySelectorAll('div');
+            const b =
+                document.getElementsByTagName('div');
+                b[0].style.backgroundColor = 'crimson'
+        </script>
+    </body>
+</html>
