@@ -13,6 +13,10 @@
 	<li><a href='index.jsp?inc=./jquery/filter.jsp'>FILTER</a></li>
 	<li><a href='index.jsp?inc=./jquery/traverse.jsp'>TRAVERSE</a></li>
 	<li><a href='index.jsp?inc=./jquery/manipulation.jsp'>MANIPULATION</a>
+	<li><a href='index.jsp?inc=./jquery/each.jsp'>EACH</a></li>
+	<li><a href='index.jsp?inc=./jquery/attribute.jsp'>ATTRIBUTE</a></li>
+	<li><a href='index.jsp?inc=./jquery/sprialize.jsp'>SPRIALIZE</a></li>
+	<li><a href='index.jsp?inc=./jquery/keyup.jsp'>KEYUP</a></li>
 </ol>
 </body>
 </html>
