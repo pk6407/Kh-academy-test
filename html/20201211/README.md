@@ -808,3 +808,230 @@ commit;
 
 - 폴더 생성 : css,js
   - JavaScript에서 javascript file 로 만들기
+
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>loginfo</title>
+</head>
+<body>
+<div id='loginfo'>
+	<%
+		//session.setAttribute("mid","kim");
+		session.removeAttribute("mid");
+		if( session.getAttribute("mid") == null){
+	%>
+	<%-- 로그인 이전 화면 --%>
+	<form name='frm_log' method='post' id='frm_log'>
+		<label for='mid'>아이디</label><br/>
+		<input type='text' id='mid' name='mid' size='14' value='kim' />
+		<br/>		
+		<label for='pwd'>암호</label><br/>
+		<input type='password' id='pwd' name='pwd' size='14' value='1111' />
+		<br/>
+		<input type='button' id='btnlogin' value='로그인' />
+	</form>
+
+	<br/>
+	<a href=''>아이디 | 암호 찾기</a>
+	
+	<% } else { %>
+	
+	<%-- 로그인 이후 화면 --%>
+	<span>[<%=session.getAttribute("mid") %>] 님방가</span><br/>
+	<input type='button' id='btnlogout' value='로그아웃' />
+	
+	<% } %>
+	
+</div>
+</body>
+</html>
+```
+
+```js
+/**
+ * login / logout을 위한 스크립트
+ * 작성일 : 2020.12.11
+ * 작성자 : 김남호^^
+ */
+
+var logInOut = function(){
+	$('#btnLogin').on('click',function(){
+		$('#frm_log').action = "./member/login.jsp";
+		$('#frm_log').submit();
+	});
+	
+	$('#btnLogout').on('click',function(){
+		$('#frm_log').action = "./member/logout.jsp";
+		$('#frm_log').submit();
+	});
+	
+	// javascript version
+	var btnLogin = document.getElementById('btnLogin');
+	var btnLogout = document.getElementById('btnLogout');
+
+	btnLogin.onclick = function(){
+		var frm = document.frm_log;
+		frm.action = './member/login.jsp';
+		frm.submit();
+	}
+	
+	btnLogout.onclick = function(){
+		var frm = document.frm_log;
+		frm.action = './member/logout.jsp';
+		frm.submit();
+	}
+	
+	
+}
+```
+
+# 마지막 교시^^
+
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>loginfo</title>
+<script src='./js/login.js'></script>
+</head>
+<body>
+<div id='loginfo'>
+	<%
+		//session.setAttribute("mid","kim");
+		session.removeAttribute("mid");
+		if( session.getAttribute("mid") == null){
+	%>
+	<%-- 로그인 이전 화면 --%>
+	<form name='frm_log' method='post' id='frm_log'>
+		<label for='mid'>아이디</label><br/>
+		<input type='text' id='mid' name='mid' size='14' value='kim' />
+		<br/>		
+		<label for='pwd'>암호</label><br/>
+		<input type='password' id='pwd' name='pwd' size='14' value='1111' />
+		<br/>
+		<input type='button' id='btnlogin' value='로그인' />
+	</form>
+
+	<br/>
+	<a href=''>아이디 | 암호 찾기</a>
+	
+	<% } else { %>
+	
+	<%-- 로그인 이후 화면 --%>
+	<span>[<%=session.getAttribute("mid") %>] 님방가</span><br/>
+	<input type='button' id='btnlogout' value='로그아웃' />
+	
+	<% } %>
+	
+</div>
+<script>logInOut()</script>
+</body>
+</html>
+```
+
+```js
+/**
+ * login / logout을 위한 스크립트
+ * 작성일 : 2020.12.11
+ * 작성자 : 김남호^^
+ */
+
+var logInOut = function(){
+	$('#btnLogin').on('click',function(){
+		$('#frm_log').action = "./member/login.jsp";
+		$('#frm_log').submit();
+	});
+	
+	$('#btnLogout').on('click',function(){
+		$('#frm_log').action = "./member/logout.jsp";
+		$('#frm_log').submit();
+	});
+
+/*	
+	// javascript version
+	var btnLogin = document.getElementById('btnLogin');
+	var btnLogout = document.getElementById('btnLogout');
+
+	if(btnLogin != null){
+		btnLogin.onclick = function(){
+			var frm = document.frm_log;
+			frm.action = './member/login.jsp';
+			frm.submit();
+		}
+	}
+	if(btnLogout != null){
+		btnLogout.onclick = function(){
+			location.href = './member/logout.jsp';
+		}
+	}
+*/	
+	
+}
+```
+
+```jsp
+<%page import="bean.MemberDao" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String mid = request.getParameter("mid");
+	String pwd = request.getParameter("pwd");
+	// database에 존재 유무
+	
+	MemberDao dao = new MemberDao();
+	boolean b = dao.log(mid,pwd);
+	
+	if(b){
+	session.setAttribute("mid",mid);
+	response.sendRedirect("../index.jsp");
+	}else{
+		//로그인 실패
+	}
+%>
+```
+
+```java
+package bean;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class MemberDao {
+	Connection conn;
+	PreparedStatement ps;
+	ResultSet rs;
+	
+	public MemberDao() {
+		conn = new Application().getConn();
+	}
+	
+	public boolean login(String mid, String pwd) {
+		boolean b = true;
+		try {
+			String sql = "select * from member where mid=? and pwd=? ";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, mid);
+			ps.setString(2, pwd);
+			
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				b=true;
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			return b;
+		}
+	}
+	
+}
+```
