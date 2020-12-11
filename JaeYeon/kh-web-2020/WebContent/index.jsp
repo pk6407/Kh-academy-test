@@ -22,36 +22,25 @@
  	}
 %>
 	<div id='index'>
-		<header id='header'>
-			<nav id ='nav'>
-				<ul>
-					<li><a href = 'index.jsp'>HOME</a></li>
-					<li><a href = 'index.jsp?sub=./jquery/menu.jsp'>JQUERY</a></li>
-					<li><a href = 'index.jsp?sub=./ajax/menu.jsp'>AJAX</a></li>
-					<li><a href = 'index.jsp?sub=./mybatis/menu.jsp'>MYBATIS</a></li>
-					<li>방명록</li>
-					<li>게시판</li>
-					<li>회원관리</li>
-				</ul>
-			</nav>
-		</header>
+		<!-- header 영역 -->
+		<%@include file="header.jsp" %>
 		
 		<section id='contents'>
 			<article class ='content'>
 				<jsp:include page="<%=inc %>"/>
 			</article>
 			<aside class ='aside'>
-				<img src='http://placehold.it/150x100'/>
+				<jsp:include page="./member/loginfo.jsp"/>
 			<div id ='sub_menu'>
 				<jsp:include page="<%=sub %>"/>
 			</div>
 			</aside>
 			
 		</section>
-		
-		<footer id='footer'>융합S/W 개발(주)</footer>
-	</div>
+		<%--foot 영역 --%>
+		<%@include file="footer.jsp" %>
 	
+	</div>
 	<script>
 	// 모든 기본태그의 마진, 패딩을 0
 	$('*').css('margin','0');
