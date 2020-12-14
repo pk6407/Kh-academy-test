@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1, maximum-scale=3.0">
+    <title>HELLPARTY</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style type="text/css"></style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+/*font-family: 'Roboto', sans-serif;*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0px solid gray;
+
+}
+
+img {
+  width: 100px;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  letter-spacing: 0.1px;
+    color: black;
+}
+
+body ul{
+    list-style-type: none;
+}
+
+h1, h2, ul, h3, h4 {
+  font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 400;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.5rem;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #222;
+
+}
+
+h3 {
+  font-size: 2.0rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+    color: #444;
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: 2rem;
+    color: #555;
+}
+
+p {
+    font-size: 0.9rem;
+  line-height: 2rem;
+}
+
+a:link {color: #000;
+    text-decoration: none;}
+a:visited { color: #000;}
+a:default { color: #000;}
+
+button {
+    /*padding : 20px 50px;*/
+    width: 200px;
+    height: 60px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    background: #572a31;
+    color: white;
+    transition: 0.3s;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 10px ;
+    margin-left: 0px;
+    line-height: 1;
+    border: 1px solid #572a31;
+    cursor: pointer;
+}
+
+button:hover {
+  background: none;
+    border: 1px solid #572a31;
+    color: #572a31;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+header img {
+    float: right;
+}
+header menu{
+    float:left;
+}
+
+header> :last-child {
+    padding: 20px 0;
+}
+
+header ul {
+    display: flex;
+    float: right;
+    cursor: pointer;
+}
+
+
+header> :last-child> :first-child> li {
+     padding: 0 16px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-right: 1px solid #777;
+}
+
+header> :last-child> :first-child> :last-child {
+    border-right: none;
+    padding-right: 20px;
+}
+
+
+header> :last-child> :last-child> li {
+    padding: 0 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.dropdown {
+    clear: both;
+    position: relative;
+    display: inline-block;
+     font-size: 20px;
+    text-transform: uppercase;
+    padding: 0 20px;
+}
+
+.dropdown-content {
+      opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    position: absolute;
+    background-color: white;
+    font-size: 17px;
+    margin-top: 1rem;
+    transition: 0.5s;
+    left: -40px;
+    transition: all 0.7s ease;
+    z-index: 1;
+    padding: 20px;
+    width: 250px;
+    font-weight: bold;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 25px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+       opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    transform: translateY(10px);
+}
+
+header div> :first-child li:hover {
+    font-weight: bold;
+}
+
+header div> :last-child li:hover {
+    font-weight: bold;
+    color: #572a31;
+    border-bottom: 2px solid #572a31;
+}
+
+header :last-child :nth-child(5) .dropdown-content {
+    display: flex;
+    width: 600px;
+    left: -300px;
+}
+
+header :last-child :nth-child(5) .dropdown-content div div{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+header :last-child :nth-child(6) .dropdown-content {
+    display: flex;
+    width: 400px;
+    left: -250px;
+}
+
+header :last-child :nth-child(6) .dropdown-content div div{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.title {
+    background: url('https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80') no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+
+.title div {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    transform: translate(-20%, -10%);
+    text-align: right;
+    text-transform: uppercase;
+    
+}
+
+.title h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #572a31;
+    border-bottom: 3px solid;
+    padding: 10px 0 ;
+    margin-bottom: 20px;
+}
+
+.title h3 {
+    font-size: 3.1rem;
+    font-weight: bold;
+    color: white;
+    background: rgba(87, 42, 49, 0.5);
+    padding: 30px 10px;
+}
+
+.title h1 {
+    font-size: 7rem;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #572a31;
+    text-shadow: 2px 2px 2px #333;
+}
+
+.banner {
+     background: #572a31;
+    justify-content: space-around;
+    
+}
+.banner div {
+    display: flex;
+    padding: 10px 0px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.banner img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.banner div h5 {
+    color: white;
+    font-weight: 100;
+   padding: 0 10px;
+}
+
+.menu {
+    text-align: center;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 200px 0;
+}
+
+.menu> :first-child{
+    width: 450px;
+    height: 35px;
+}
+
+.menu> :last-child {
+    display: flex;
+    padding: 50px 0;
+}
+
+.menu section div {
+    width: 330px;
+    height: 300px;
+    position: relative;
+}
+
+.menu section> :first-child {
+    margin-left: 0;
+}
+
+.menu section> :nth-child(2) {
+    width: 340px;
+}
+
+
+.menu section> :last-child {
+    margin-right: 0;
+}
+
+.menu h4 {
+    text-transform: uppercase;
+     font-weight: bold;
+    padding: 10px;
+    color: #572a31;
+}
+
+
+.menu section img {
+    width: 100%;
+    height: 100%;
+      
+}
+
+.menu section div> :first-child {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+     transition: 0.7s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.menu section div> :first-child:hover {
+    background: none;
+}
+
+
+.brand {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    min-width: 1000px;
+}
+
+.brand> :first-child {
+    background: linear-gradient(
+            to right,
+            rgba(235, 224, 220, 0) 10%,
+            rgba(235, 224, 220, 0.25) 25%,
+            rgba(235, 224, 220, 0.5) 50%,
+            rgba(235, 224, 220, 0.75) 75%,
+            rgba(235, 224, 220, 1) 100%
+          ), url('http://www.ilyosisa.co.kr/news/photo/201710/136534_72583_192.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 100%;
+}
+
+.brand> :last-child {
+    position: relative;
+    background: #ebe0dc;
+    width: 50%;
+    color: #572a31;
+}
+
+.brand> :last-child> :first-child {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    min-width: 700px;
+}
+
+.brand img {
+    width: 500px;
+    margin: 30px 0;
+}
+
+.brand h2 {
+        color: #572a31;
+    font-weight: bold;
+    padding: 30px 0;
+}
+
+.brand h4 {
+        color: #572a31;
+    font-weight: bold;
+    padding: 40px 0;
+}
+
+.brand> :last-child> :last-child> :last-child {
+    padding: 30px 0;
+}
+
+.brand .free {
+    background: none;
+    border: 1px solid #572a31;
+    color: #572a31;
+     transition: 0.3s;
+}
+
+
+
+.brand .free:hover {
+     background: #572a31;
+    border: 1px solid #572a31;
+    color: white;
+    
+}
+
+.md {
+    text-align: center;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 200px 0;
+}
+
+.md> :first-child{
+    width: 550px;
+    height: 35px;
+}
+
+.md> :last-child {
+    display: flex;
+    padding: 50px 0;
+}
+
+.md section div {
+    width: 330px;
+    height: 300px;
+    position: relative;
+}
+
+.md section> :first-child {
+    margin-left: 0;
+}
+
+.md section> :nth-child(2) {
+    width: 340px;
+}
+
+
+.md section> :last-child {
+    margin-right: 0;
+}
+
+.md h4 {
+    text-transform: uppercase;
+     font-weight: bold;
+    padding: 10px;
+    color: #572a31;
+}
+
+
+.md section img {
+    width: 100%;
+    height: 100%;
+}
+
+.md section div> :first-child {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+     transition: 0.7s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.md section div> :first-child:hover {
+    background: none;
+}
+
+.insta {
+    text-align: center;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 150px 0;
+    padding-top: 0;
+}
+
+.insta section {
+    display: flex;
+}
+
+.insta> :first-child{
+    width: 450px;
+    height: 35px;
+}
+
+.insta> :last-child{
+    padding-top: 50px;
+}
+
+.insta div section div{
+    width: 200px;
+    height: 200px;
+        overflow: hidden;
+    cursor: pointer;
+}
+
+.insta img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.insta div section img:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background: #efefef;
+    padding: 60px;
+    padding-top: 80px;
+}
+
+
+footer> :first-child {
+    width: 1000px;
+    margin: 0 auto;
+     display: flex;
+justify-content: space-between;
+}
+
+footer> :first-child> :first-child h4 {
+    margin-top: -10px;
+}
+
+footer> :first-child h4 {
+    color: #572a31;
+    font-weight: bold;
+}
+
+footer> :first-child> :nth-child(2) {
+    padding: 10px 0;
+    cursor: pointer;
+    color: #444;
+}
+
+footer> :first-child> :nth-child(2) ul> :nth-child(2n-1):hover {
+    border-bottom: 1px solid #777;
+    color: black;
+    font-weight: bold;
+}
+
+footer ul{
+    display: flex;
+}
+
+footer ul li {
+    padding : 5px 8px;
+}
+
+footer> :first-child> :last-child> :last-child {
+    display: flex;
+}
+
+footer> :first-child> :last-child h4 {
+    text-align: right;
+    padding: 0 8px;
+}
+
+footer div>:last-child img {
+   width: 40px;
+    height: 40px;
+    margin: 8px;
+}
+
+footer h3 {
+    padding-top: 20px;
+}
+
+address {
+    font-style: normal;
+    background: #efefef;
+    padding-bottom: 40px;
+}
+
+address p {
+    text-align: center;
+    color: #777
+}
+
+    </style>
+<body>
+   <header>
+       <img src="https://www.tomntoms.com/assets/images/main/logo.png" alt="">
+       <div name='menu'>
+           <ul>
+               <li>매장찾기</li>
+               <li>탐앤탐스 몰</li>
+               <li>ENGLISH</li>
+    <li>CHINESE</li>
+           </ul>
+           <ul>
+               <div class="dropdown">
+               <li class="dropbtn">menu</li>
+                 <div class="dropdown-content">
+               <a href="#">신메뉴</a>
+               <a href="#">음료</a>
+               <a href="#">푸드</a>
+               <a href="#">MD</a>
+               </div>
+            </div>
+               <li>event</li>
+               <div class="dropdown">
+               <li class="dropbtn">store</li>
+               <div class="dropdown-content">
+               <a href="#">국내 매장 찾기</a>
+                <a href="#">글로벌 매장 찾기</a>
+               </div>
+               </div>
+               <div class="dropdown">
+               <li class="dropbtn">service</li>
+               <div class="dropdown-content">
+                <a href="#">가맹점 개설문의</a>
+                <a href="#">마이탐 멤버쉽</a>
+                <a href="#">제휴할인/기프트카드</a>
+                <a href="#">렌탈 서비스</a>
+                <a href="#">탐스 라이프 스토어</a>
+                <a href="#">아카데미</a>
+                </div>
+               </div>
+                <div class="dropdown">
+                <li class="dropbtn">community</li>
+                <div class="dropdown-content">
+                    <div>
+                        <a href="#">예술문화활동</a>
+                        <div>
+                <a href="#">갤럭시탐</a>
+                <a href="#">탐스테이지</a>
+                        <a href="#">탐시어터</a>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#">고객의소리</a>
+                        <div>
+                <a href="#">공지사항</a>
+                <a href="#">FAQ</a>
+                        <a href="#">제휴마케팅/단체구매 제안</a>
+                        <a href="#">신규 입점제의</a>
+                        <a href="#">마이탐 멤버쉽 이용안내</a>
+                        <a href="#">1:1 문의하기</a>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#">사회공헌활동</a>
+                <a href="#">온라인커뮤니티</a>
+                <div>
+                <a href="#">인스타그램</a>
+                        <a href="#">블로그</a>
+                        <a href="#">유튜브</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="dropdown">
+               <li class="dropbtn">tom n toms</li>
+               <div class="dropdown-content">
+                     <div>
+                        <a href="#">브랜드 소개</a>
+                        <div>
+                <a href="#">TOM N TOMS</a>
+                <a href="#">Coffee & Pretzel</a>
+                        <a href="#">Brand History</a>
+                        <a href="#">Global TOM N TOMS</a>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#">채용안내</a>
+                <a href="#">공지사항</a>
+                <a href="#">찾아오시는길</a>
+                    </div>
+                    </div>
+               </div>
+           </ul>
+       </div>
+   </header>
+   <article class="title">
+      <div>
+       <h2>tom n toms</h2>
+       <h3>hello winter</h3>
+       <h1>event</h1>
+       </div>
+   </article>
+   <article class="banner">
+     <div>
+      <div>
+       <img src="https://cdn3.iconfinder.com/data/icons/essential-pack/32/39-Speech_Bubble-512.png" alt="">
+       <h5>[신메뉴 출시] 탐의보감(쌍화차 2종) & 사과생강차</h5>
+       <h5>2020.11.09</h5>
+       <img src="https://cdn0.iconfinder.com/data/icons/free-daily-icon-set/512/Wrong-512.png" alt="">
+       </div>
+        <div>
+       <h5>[신제품 출시] 2020 캘린더 출시</h5>
+       <h5>2020.10.26</h5>
+       <img src="https://cdn0.iconfinder.com/data/icons/free-daily-icon-set/512/Wrong-512.png" alt="">
+       </div>
+       </div>
+   </article>
+   <article class="menu">
+           <img src="https://www.tomntoms.com/assets/images/main/section_tit1.png" alt="">
+           <section>
+               <div>
+                  <div></div>
+                   <img src="https://images.unsplash.com/photo-1503481766315-7a586b20f66d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="">
+                   <h4>americano</h4>
+               </div>
+               <div>
+                  <div></div>
+                   <img src="https://images.unsplash.com/photo-1461010083959-8a5727311252?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1011&q=80" alt="">
+                   <h4>latte</h4>
+               </div>
+               <div>
+                  <div></div>
+                   <img src="https://images.unsplash.com/photo-1454435840133-795d84feef63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="">
+                   <h4>cappuccino</h4>
+               </div>
+           </section>
+          </article>
+          <article class="brand">
+             <section></section>
+              <section>
+                 <div>
+                  <h2>대한민국 대표 스페셜티 커피 브랜드</h2>
+                  <img src="https://www.tomntoms.com/assets/images/main/tomntoms_tit_bold.svg" alt="">
+                  <h4>탐앤탐스는 오랜 노하우로 국내외 커피 시장을 선도하며<br>
+스페셜티 커피와 갓 구운 따뜻한 프레즐, 문화가 융합된 특별한 공간으로<br>
+지금 대한민국을 비롯해 전 세계에서 사랑받는 브랜드입니다.</h4>
+            <div>
+             <button>가맹문의</button>
+             <button class="free">브랜드 소개</button>
+             <button class="free">신규매장 소개</button>
+              </div>
+              </div>
+              </section>
+          </article>
+          <article class="md">
+           <img src="https://www.tomntoms.com/assets/images/main/section_tit2.png" alt="">
+           <section>
+               <div>
+                  <div></div>
+                   <img src="https://mblogthumb-phinf.pstatic.net/MjAxODExMDNfMjIz/MDAxNTQxMjI2MTM0ODMw.hiFJFP8Mg4FNNRb84ufoPT36A_Wm-1ZMw9l-swES--kg.Rpchz_7ZkYvUB_rR-CXHMsHuSsiDifI1i7EiVzBbbMgg.JPEG.true9820/%25ED%2583%2590%25EC%2595%25A4%25ED%2583%2590%25EC%258A%25A4_2019_%25ED%2594%258C%25EB%259E%2598%25EB%2584%2588_(2).jpg?type=w800" alt="">
+                   <h4>planner</h4>
+               </div>
+               <div>
+                  <div></div>
+                   <img src="https://www.biznews.or.kr/data/photos/20190311/art_15526223567273_4e31c6.jpg" alt="">
+                   <h4>butter coffee</h4>
+               </div>
+               <div>
+                  <div></div>
+                   <img src="https://imgc.1300k.com/aaaaaib/events/plan/127000/126761_tpl2pc_454fe1c2030b00855f9a69f1bf254b.jpg" alt="">
+                   <h4>tumbler</h4>
+               </div>
+           </section>
+          </article>
+          <article class="insta">
+            <img src="https://www.tomntoms.com/assets/images/main/section_tit3.png" alt="">
+            <div>
+             <section>
+              <div>
+                  <img src="https://www.tomntoms.com/upload/sns/2038868156_LRMEQwPi_20201117123340.jpg" alt="">
+              </div>
+              <div>
+                  <img src="https://www.tomntoms.com/upload/sns/2038868156_vjJB1zoU_20201117123154.jpg" alt="">
+              </div>
+              <div>
+                  <img src="https://www.tomntoms.com/upload/sns/2038868156_wkp3dBbs_20201117123132.jpg" alt="">
+              </div>
+              <div>
+                  <img src="https://www.tomntoms.com/upload/sns/2038868156_LBiXHb0o_20201117122917.jpg" alt="">
+              </div>
+              <div>
+                  <img src="https://www.tomntoms.com/upload/sns/2038868156_xioXV5uK_20201117122607.jpg" alt="">
+              </div>
+              </section>
+              <section>
+              <div>
+                  <img src="https://www.tomntoms.com/upload/sns/2038868156_4BrPHXIZ_20201117122442.jpg" alt="">
+              </div>
+              <div>
+                  <img src="https://www.tomntoms.com/upload/sns/2038868156_7tlNecqs_20201117122332.jpg" alt="">
+              </div>
+              <div>
+                  <img src="https://www.tomntoms.com/upload/sns/2038868156_dwAcgWYI_20201117122156.jpg" alt="">
+              </div>
+              <div>
+                  <img src="https://www.tomntoms.com/upload/sns/2038868156_Pd6crzos_20201117121909.jpg" alt="">
+              </div>
+              <div>
+                  <img src="https://www.tomntoms.com/upload/sns/2038868156_QvncKCLx_20200819050749.jpg" alt="">
+              </div>
+              </section>
+              </div>
+          </article>
+          <footer>
+             <div>
+              <section>
+                  <h4>고객만족센터</h4>
+                  <h3>02. 3412. 0781</h3>
+              </section>
+              <section>
+                      <ul>
+                          <li>회사소개</li>
+                          <li>·</li>
+                          <li>채용안내</li>
+                          <li>·</li>
+                          <li>프랜차이즈</li>
+                          <li>·</li>
+                          <li>계열사소개</li>
+                          <li>·</li>
+                          <li>공지사항</li>
+                      </ul>
+                      <ul>
+                          <li>고객만족센터</li>
+                          <li>·</li>
+                          <li>찾아오시는길</li>
+                          <li>·</li>
+                          <li>가맹점 전용 게시판</li>
+                      </ul>
+              </section>
+              <section>
+                  <h4>Follow us</h4>
+                  <div>
+                  <img src="https://www.tomntoms.com/assets/images/icon/sns_instagram.png" alt="">
+                  <img src="https://www.tomntoms.com/assets/images/icon/sns_facebook.png" alt="">
+                  <img src="https://www.tomntoms.com/assets/images/icon/sns_youtube.png" alt="">
+                  <img src="https://www.tomntoms.com/assets/images/icon/sns_blog.png" alt="">
+                  </div>
+              </section>
+              </div>
+          </footer>
+          <address>
+              <p>
+                  서울특별시 강남구 논현로 163길 10 베드로빌딩 2F (구 : 신사동 570-6) 대표 : 김도균<br>
+사업자등록번호 : 215-86-65050 개인정보 책임자 : 이동규 TEL. 02-3412-0781 FAX. 02-3412-1907<br><br>
+COPYRIGHT ⓒ 2015 TOM N TOMS COFFEE. ALL RIGHTS RESERVED.
+              </p>
+          </address>
+    </body>
+</html>

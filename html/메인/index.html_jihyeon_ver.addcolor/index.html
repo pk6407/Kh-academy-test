@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COFFEESAZO</title>
+    <link rel="stylesheet" href="./CSS/index.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+
+            $('#checkbox').change(function () {
+                setInterval(function () {
+                    moveRight();
+                }, 3000);
+            });
+
+            var slideCount = $('#slider ul li').length;
+            var slideWidth = $('#slider ul li').width();
+            var slideHeight = $('#slider ul li').height();
+            var sliderUlWidth = slideCount * slideWidth;
+
+            $('#slider').css({ width: slideWidth, height: slideHeight });
+
+            $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+            $('#slider ul li:last-child').prependTo('#slider ul');
+
+            function moveLeft() {
+                $('#slider ul').animate({
+                    left: + slideWidth
+                }, 200, function () {
+                    $('#slider ul li:last-child').prependTo('#slider ul');
+                    $('#slider ul').css('left', '');
+                });
+            };
+
+            function moveRight() {
+                $('#slider ul').animate({
+                    left: - slideWidth
+                }, 200, function () {
+                    $('#slider ul li:first-child').appendTo('#slider ul');
+                    $('#slider ul').css('left', '');
+                });
+            };
+
+            $('a.control_prev').click(function () {
+                moveLeft();
+            });
+
+            $('a.control_next').click(function () {
+                moveRight();
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-align">
+            <div class="header-logo">
+                <a href="#"><img src="./img/logo_white.png" class="logo"></a>
+            </div>
+            <div class="btns-signin-signup">
+                <span><a href="#">로그인</a></span>
+                <span><a href="#">회원가입</a></span>
+                <span><a href="#">고객센터</a></span>
+            </div>
+        </div>
+
+        <div class="shopping">
+            
+            <span id="wholebean"><a href="#">원두</a></span>
+            <!-- onmouseover 써볼지? (javascript)-->
+            <span id="stickcoffee"><a href="#">스틱커피</a></span>
+            <span id="capsulecoffee"><a href="#">캡슐커피</a></span>
+            
+        </div>
+    </header>
+    <section>
+        <div class="section-slider">
+            <h1>금주의 인기상품</h1>
+            <div id="slider">
+                <a href="#" class="control_next"></a>
+                <a href="#" class="control_prev"></a>
+                <ul>
+                    <li></li>
+                    <li style="background: #aaa;"></li>
+                    <li></li>
+                    <li style="background: #aaa;"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section-hashtags">
+            <h1>키워드로 상품을 찾아보세요!</h1>
+            <div class="items-container">
+                <div class="items-container-wholebean">
+                    <span id="wholebean-acidity"><a href="#">#풍부한산미</a></span>
+                    <span id="wholebean-body"><a href="#">#묵직한바디감</a></span>
+                    <span id="wholebean-latin-america"><a href="#">#중남미원두</a></span>
+                    <span id="wholebean-africa"><a href="#">#아프리카원두</a></span>
+                </div>
+                <div class="items-container-stickcoffee-capsulecoffee">
+                    <span id="easy-and-simple"><a href="#">#쉽고간편한</a></span>
+                    <span id="lungo"><a href="#">#룽고</a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <!-- flex로 2칸 or 3칸?-->
+        <div class="footer">
+            <ul class="footer-list-box">
+                <li>COFFEESAZO | 대표자: 이지현 | 사업자등록번호 123-45-67890</li>
+                <li>서울특별시 영등포구 선유도2로 57 이레빌딩(구관) 19F</li> 
+                <li>책임자: 제윤지 | 개인정보관리책임자: 김은규</li>
+                <li>고객센터 02-1234-5678 | E-mail: customer@coffeesazo.com</li>
+            </ul>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

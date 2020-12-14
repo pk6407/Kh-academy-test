@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>coffeesazo</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        html,
+        body {
+            margin: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        #header_content {
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 100px;
+            align-items: center;
+            margin: auto;
+        }
+
+        #header_login_group {
+            width: 300px;
+            margin-left: auto;
+            padding-top: 0px;
+            padding-right: 96px;
+            padding-bottom: 11px;
+            color: rgb(85, 59, 57);
+            letter-spacing: 3px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        #nav {
+            position: absolute;
+            top: 150px;
+            width: 100%;
+            height: 67px;
+            font-size: 17px;
+            font-weight: 500;
+            box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.16);
+        }
+
+        #nav_content {
+            position: relative;
+            width: 1003px;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #nav #nav_content .nav_set {
+            width: 400px;
+            text-align: center;
+            padding-right: 20px;
+            color: rgb(85, 59, 57);
+            letter-spacing: 15px;
+            cursor: pointer;
+        }
+
+        #nav #nav_content .nav_set:hover {
+            font-weight: bold;
+            cursor: pointer;
+            color: #851b1b;
+        }
+
+        .logo img {
+            width: 400px;
+            left: 38%;
+            top: 24px;
+            position: absolute;
+            cursor: pointer;
+            justify-content: center;
+            height: auto;
+        }
+
+        #main {
+            position: absolute;
+            top: 230px;
+            width: 100%;
+            height: 1000px;
+        }
+
+        #main #main_content .main_title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 530;
+            display: flex;
+            height: 93px;
+            justify-content: center;
+            color: rgb(85, 59, 57);
+        }
+
+        #footer {
+            position: absolute;
+            top: 1250px;
+            width: 100%;
+            height: 170px;
+            font-size: 17px;
+            line-height: 40%;
+            color: rgb(85, 59, 57);
+        }
+
+        .footer_Info {
+            padding-left: 50px;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .slide {
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slide ul {
+            width: calc(100% * 4);
+            display: flex;
+            animation: slide 8s infinite;
+        }
+
+        /* slide를 8초동안 진행하며 무한반복 함 */
+        .slide li {
+            width: calc(100% / 4);
+            height: 400px;
+        }
+
+        .slide li:nth-child(1) {
+            background: #ffa;
+        }
+
+        .slide li:nth-child(2) {
+            background: #faa;
+        }
+
+        .slide li:nth-child(3) {
+            background: #afa;
+        }
+
+        .slide li:nth-child(4) {
+            background: #aaf;
+        }
+
+        @keyframes slide {
+            0% {
+                margin-left: 0;
+            }
+
+            /* 0 ~ 10  : 정지 */
+            10% {
+                margin-left: 0;
+            }
+
+            /* 10 ~ 25 : 변이 */
+            25% {
+                margin-left: -100%;
+            }
+
+            /* 25 ~ 35 : 정지 */
+            35% {
+                margin-left: -100%;
+            }
+
+            /* 35 ~ 50 : 변이 */
+            50% {
+                margin-left: -200%;
+            }
+
+            60% {
+                margin-left: -200%;
+            }
+
+            75% {
+                margin-left: -300%;
+            }
+
+            85% {
+                margin-left: -300%;
+            }
+
+            100% {
+                margin-left: 0;
+            }
+        }
+        .main_center {
+            text-align: center;
+            justify-content: center;
+            color: rgb(85, 59, 57);
+            padding-top: 30px;
+
+        }
+        #tag_content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding: 150px 150px;
+            border: 1px solid rgb(85, 59, 57);
+            border-radius: 20px;
+        }
+        .tag_info {
+            text-align: center;
+            justify-content: center;
+            letter-spacing: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header_content">
+            <div class="logo">
+                <img src="logo.PNG">
+            </div>
+            <div id="header_login_group">
+                <a>로그인</a>
+                <a>회원가입</a>
+                <a>고객센터</a>
+            </div>
+        </div>
+        <div id="nav">
+            <div id="nav_content">
+                <div class="nav_set">
+                    <a>원두</a>
+                    <a>스틱커피</a>
+                    <a>캡슐커피</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div id="main">
+            <div id="main_content">
+                <h2 class="main_title">금주의 인기상품</h2>
+            </div>
+            <div class="slide">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="main_center">
+                <h3>키워드로 상품을 찾아보세요!</h3>
+            </div>
+            <div id="tag_content">
+                <div class="tag_info">
+                    <a>#풍부한산미</a>
+                    <a>#묵직한바디감</a>
+                    <a>#중남미원두</a>
+                    <a>#아프리카원두</a>
+                    <a>#쉽고간편한</a>
+                    <a>#룽고</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footer">
+            <div class="info">
+                <div class="footer_Info">
+                    <p>(주)COFFEESAZO</p>
+                    <p>주소 : 서울시 영등포구 이레빌딩 19F</p>
+                    <p>전화번호 : 02-1111-1111</p>
+                    <p>대표자 : 이지현</p>
+                    <p>사업자번호 : 123-81-12345</p>
+                    <P>이메일 : info@coffeesazo.com</P>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CoffeeShop</title>
+<style>
+.logo{
+	width:100%;
+	height:80px;
+	background-color: rgba(71, 12, 12, 0.986);
+	box-sizing : border-box;
+	text-align : center ;
+    display: block;
+}
+.menu ul li{
+    float:left;
+    width: 30%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.menu{
+    background-color: cornflowerblue;
+}
+.menu ul{
+    width:500px;
+    margin:0 auto;
+    overflow: hidden;
+}
+li{
+    list-style: none;
+}
+.logo h3{
+    float: right;
+    margin-top: 30px;
+    letter-spacing: 2px;
+    
+}
+.body{
+    width: 100%;
+    height: 1000px;
+    background-color: #ddd;
+}
+.footer{
+    background-color: gray;
+}
+*{margin:0;padding:0;}
+    ul,li{list-style:none;}
+    .slide{height:300px;overflow:hidden;position:relative;}
+    .slide li{position:absolute;left:0;right:0;top:0;bottom:0;opacity:0;transition:1s;}
+    .slide li:nth-child(1){background:#ffa;}
+    .slide li:nth-child(2){background:#faa;}
+    .slide li:nth-child(3){background:#afa;}
+    .slide li:nth-child(4){background:#aaf;}
+    .slide input{display:none;}
+    .slide .bullet{position:absolute;bottom:20px;left:0;right:0;text-align:center;z-index:10;}
+    .slide .bullet label{width:10px;height:10px;border-radius:10px;border:2px solid #666;display:inline-block;background:#fff;font-size:0;transition:0.5s;cursor:pointer;}
+    /* 슬라이드 조작 */
+    #pos1:checked ~ ul li:nth-child(1),
+    #pos2:checked ~ ul li:nth-child(2),
+    #pos3:checked ~ ul li:nth-child(3),
+    #pos4:checked ~ ul li:nth-child(4){opacity:1;}
+    /* bullet 조작 */
+    #pos1:checked ~ .bullet label:nth-child(1),
+    #pos2:checked ~ .bullet label:nth-child(2),
+    #pos3:checked ~ .bullet label:nth-child(3),
+    #pos4:checked ~ .bullet label:nth-child(4){background:#666;}
+.body h3{
+    text-align: center;
+    font-size: 35px;
+    padding-top: 50px;
+}
+.body ul li{
+    text-align: left;
+    padding-left: 550px;
+    padding-top: 20px;
+}
+.body ol li{
+    text-align: right;
+    padding-top: 55px;
+    padding-right: 555px;
+}
+.body li {
+    text-align: left;
+    padding-top: 50px;
+    padding-left: 250px;
+}
+</style>
+</head>
+<body>
+	<header>
+	<div id="header">
+	    <div class="logo">
+            <a><img src="https://images.clipartlogo.com/files/istock/previews/5311/53110202-coffee-logo-template.jpg"
+        width="250px", height="80px"></a>
+        <h3>장바구니</h3>
+        <h3>로그아웃</h3>
+        <h3>고객센터</h3>
+    </div>
+        <div class='menu'>
+        <ul>
+            <li>원두</li>
+            <li>스틱커피</li>
+            <li>캡슐커피</li>
+        </ul>
+        </div>
+    </div>
+    <div id="body">
+        <div class="body">
+            <div class="slide">
+                <input type="radio" name="pos" id="pos1" checked>
+                <input type="radio" name="pos" id="pos2">
+                <input type="radio" name="pos" id="pos3">
+                <input type="radio" name="pos" id="pos4">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <p class="bullet">
+                  <label for="pos1">1</label>
+                  <label for="pos2">2</label>
+                  <label for="pos3">3</label>
+                  <label for="pos4">4</label>
+                </p>
+              </div>
+              <h3>키워드로 찾아보세용</h3>
+              <br/>
+              <ul id="keyword1">
+              <li># 묵직하다 커피</li>
+              </ul>
+              <ol>
+              <li># 상쾌한 향 커피</li>
+                </ol>
+              <li># 깔끔한 맛 커피</li>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer">
+        <ul>
+            <h3>주소</h3>
+            <li> * 서울시 동작로 동작하라구 101-12</li>
+            <h3>전화번호</h3>
+            <li> * 010-5553-8282</li>
+        </ul>
+        </div>
+    </div>
+	</header>
+	<footer>
+	</footer>
+</body>
+</html>

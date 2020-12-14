@@ -1,0 +1,2062 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0">
+  <title>REFERENCE</title>
+  <link rel="stylesheet" href="yunjac.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="script.js"></script>
+  <style type="text/css"></style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style type="text/css"></style>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!--제품 슬라이드-->
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0px solid red;
+  font-family: 'Noto Serif KR', serif;
+}
+
+.font1 {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  letter-spacing: 0.1px;
+  color: #707070;
+}
+
+img {
+  width: 100px;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link {
+  color: #9a948b;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #9a948b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #707070;
+}
+
+a:active {
+  color: #707070;
+}
+
+button {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 8px 30px;
+  border: 1px solid #707070;
+  background: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #707070;
+  background: #f4f4ed;
+  border: 1px solid #f4f4ed;
+}
+
+/*---mobile first---*/
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.head1 {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*---header---*/
+.head1 {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  border-bottom: 1px solid #9a948b;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.sidenav section {
+  width: 210px;
+  margin: 30px 20px;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  padding: 4px 5px 10px 5px;
+  right: 20px;
+  font-size: 36px;
+}
+
+.sidenav img {
+  width: 7rem;
+}
+
+.sidenav>:nth-child(2) {
+  width: 210px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidenav>:nth-child(2) a {
+  border: 1px solid #f4f4ed;
+  color: #707070;
+  text-align: center;
+  padding-top: 13px;
+  width: 60px;
+  height: 45px;
+}
+
+.sidenav>:nth-child(2) a:hover {
+  transition: all 0.5s;
+  color: #9a948b;
+  background: #f4f4ed;
+  border: 1px solid #f4f4ed;
+}
+
+.sub-li {
+  line-height: 1.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+  color: #9a948b;
+}
+
+.sub-li:hover {
+  color: #707070;
+}
+
+.main-li {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #707070;
+  line-height: 1.7rem;
+  margin: 1.5rem 0 0.8rem 0;
+  cursor: pointer;
+}
+
+.head1 {
+  background: #fff;
+}
+
+.head1-logo img {
+  width: 8rem;
+  padding-top: 0.45rem;
+}
+
+.head1-op {
+  display: flex;
+  width: 6rem;
+  padding-left: 1.2rem;
+}
+
+.head1-op img {
+  width: 20px;
+  padding-top: 1rem;
+  cursor: pointer;
+}
+
+.company {
+  border: none;
+  height: 1.5rem;
+  margin: 0.8rem 0.3rem 0 0;
+}
+
+.head2 {
+  margin-top: 40px;
+  height: 50px;
+  border-bottom: 1px solid #eee;
+}
+
+.head2 div ul {
+  text-align: center;
+}
+
+.head2 div ul li {
+  display: inline-flex;
+  padding: 0 0.5rem;
+}
+
+.head2 div ul li p {
+  line-height: 3.6rem;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
+/*---메인---*/
+.mainSlide_box {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainSlide_panel {
+  width: 100%;
+  height: 100%;
+}
+
+.mainSlide_panel li {
+  display: none;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 106%;
+  height: 500px;
+  z-index: 10;
+  list-style: none;
+}
+
+.mainSlide_panel li .background-scale {
+  position: absolute;
+  width: 108%;
+  height: 550px;
+  z-index: 11;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+  animation: mainScale 2s 1 ease-in-out;
+}
+
+@keyframes mainScale {
+  0% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+.list01 {
+  background-image: url(https://i.postimg.cc/MpbHShBD/88afa94b-edb2-433f-9e51-a0550a92c1ed.png);
+}
+
+.list03 {
+  background-image: url(https://i.postimg.cc/9060m21x/008c1cdb-b387-430b-a0b4-1527409db8a8.png);
+}
+
+.list02 {
+  background-image: url(https://i.postimg.cc/sDW1nBDb/95fbd192-9c37-4a9a-89e7-f9202a887676.png);
+}
+
+/******************************
+play/stop
+********************************/
+.play {
+  cursor: pointer;
+  display: none;
+}
+
+.stop {
+  cursor: pointer;
+  display: block;
+
+}
+
+.play_box {
+  font-size: 0;
+
+  margin:-40px 5% 0 0;
+  float: right;
+}
+
+.play_box img {
+  width: 20px;
+  filter: grayscale(100);
+}
+
+.mainSlide_panel li:first-child {
+  display: block;
+}
+
+.title_headline {
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  z-index: 12;
+  transform: scale(1.0) !important;
+}
+
+.headline_title {
+  color: #707070;
+  animation: titleUp 1.5s 1 ease-in-out normal;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes titleUp {
+  0% {
+    margin-top: 44px;
+    opacity: 0;
+    filter: opacity(0);
+  }
+
+  100% {
+    margin-top: 0px;
+    opacity: 1;
+    filter: opacity(100);
+  }
+}
+
+.headline_explain {
+  color: #707070;
+  opacity: 0;
+  animation: explainUp 1.5s 1s ease-in-out forwards;
+}
+
+@keyframes explainUp {
+  0% {
+    margin-top: -84px;
+    opacity: 0;
+    filter: opacity(0);
+  }
+
+  100% {
+    margin-top: 0px;
+    opacity: 1;
+    filter: opacity(100);
+  }
+}
+
+.mainSlide_btn_tab {
+  position: absolute;
+  bottom: -4px;
+  z-index: 11;
+  width: 100%;
+}
+
+.mainSlide_btn_tab ul {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.mainSlide_btn_tab_list {
+  height: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.mainSlide_btn_tab_list li {
+  float: left;
+  margin-bottom: 20px;
+  width: 33.3%;
+  height: 7px;
+  border-radius: 1.5px;
+  background-color: #f4f4ed;
+  list-style: none;
+}
+
+.mainSlide_btn_tab_list li:first-child {
+width: 33.4%;
+}
+
+.mainSlide_btn_tab_list li.on {
+  background-color: #9a948b;
+}
+
+.mainSlide_btn_perv {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 11;
+  top: 50%;
+  left: 14px;
+  width: 25px;
+  height: 30px;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-image: url(https://www.kccglass.co.kr/resources/img/main/slide_icon_left2.png);
+}
+
+.mainSlide_btn_next {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 11;
+  top: 50%;
+  right: 14px;
+  width: 25px;
+  height: 30px;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-image: url(https://www.kccglass.co.kr/resources/img/main/slide_icon_right2.png);
+}
+
+
+
+/*---article111---*/
+
+.container {
+  display: none;
+}
+
+.best{
+  display: block;
+  margin:60px 0;
+  text-align: center;
+  position: relative;
+}
+
+.best button {
+  margin-top : 1.5rem;
+
+}
+
+.swiper-container{
+  margin-top: 1.6rem;
+  height: 300px;
+}
+
+.swiper-wrapper{
+  align-items: center;
+}
+
+.swiper-slide{
+  width: 220px;
+  height: 250px;
+  text-align: center;
+  transform: scale(0.9);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #f4f4ed;
+}
+
+.swiper-slide img{
+  width: 100%;
+  height: 70%;
+}
+
+.swiper-slide-active{
+  transform: scale(1);
+  transition: .4s;
+}
+
+.swiper-text{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 35px;
+  text-align: center;
+}
+
+.swiper-text h5{
+  margin-left: 0px;
+  line-height: 2rem;
+  font-weight: 400;
+  color: #9a948b;
+}
+
+.swiper-text p{
+  margin-left: 0px;
+  font-weight: 800;
+  color: #9a948b;
+}
+
+/*---article222---*/
+
+.star {
+  display: none;
+}
+.new {
+  display: block;
+  height: 500px;
+  margin-bottom: 60px;
+  position: relative;
+  text-align: right;
+}
+
+.new h5 {
+  width: 200px;
+  position: absolute;
+  top: 80%;
+  left: 54.5%;
+  transform: translate(-50%, -50%);
+}
+
+.new p {
+  position: absolute;
+  width: 200px;
+  top: 100%;
+  left: 54.5%;
+  transform: translate(-50%, -50%);
+}
+
+.back1 {
+  position: absolute;
+  top: 36%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.back1>:first-child {
+  width: 250px;
+  height: 350px;
+  background: url('https://www.yunjac.com/images/main/section2_img1.png');
+  background-size: cover;
+  background-position: top center;
+}
+
+.back1-1 {
+  position: absolute;
+  top: 86%;
+  left: 61%;
+  transform: translate(-50%, -50%);
+}
+
+.back1-1>:first-child {
+  width: 260px;
+  height: 220px;
+  background: url('https://i.imgur.com/n92dtmz.png');
+  background-size: cover;
+  background-position: left top;
+}
+
+.text1 {
+  position: absolute;
+  top: 80%;
+  left: 54.5%;
+  transform: translate(-50%, -50%);
+}
+
+.text1>:first-child {
+  width: 310px;
+  height: 120px;
+  background: #eee;
+  background-size: cover;
+  background-position: top center;
+}
+
+.muse {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.muse>:first-child {
+  width: 250px;
+  height: 350px;
+  background: url('https://www.yunjac.com/images/main/section1_img4.jpg')no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+/*---article333---*/
+
+.skin {
+  display: none;
+}
+.eseence {
+  display: block;
+  height: 500px;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.eseence h5 {
+  width: 200px;
+  position: absolute;
+  top: 80%;
+  left: 46.8%;
+  transform: translate(-50%, -50%);
+}
+
+.eseence p {
+  position: absolute;
+  width: 200px;
+  top: 105%;
+  left: 46.8%;
+  transform: translate(-50%, -50%);
+}
+
+.back2 {
+  position: absolute;
+  top: 36%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+}
+
+.back2>:first-child {
+  width: 250px;
+  height: 350px;
+  background: url('https://www.yunjac.com/images/main/section2_img1.png');
+  background-size: cover;
+  background-position: right center;
+}
+
+.back2-2 {
+  position: absolute;
+  top: 35%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+}
+
+.back2-2>:first-child {
+  width: 250px;
+  height: 350px;
+  background: url('https://i.imgur.com/rV8davy.png');
+  background-size: cover;
+  background-position: right center;
+}
+
+.back2-3 {
+  position: absolute;
+  top: 84%;
+  left: 74%;
+  transform: translate(-50%, -50%);
+}
+
+.back2-3>:first-child {
+  width: 200px;
+  height: 200px;
+  background: url('https://i.imgur.com/rWtEoLq.png');
+  background-size: cover;
+  background-position: right center;
+}
+
+.text2 {
+  position: absolute;
+  top: 80%;
+  left: 45.5%;
+  transform: translate(-50%, -50%);
+}
+
+.text2>:first-child {
+  width: 310px;
+  height: 120px;
+  background: #eee;
+  background-size: cover;
+  background-position: top center;
+}
+
+.sence {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sence>:first-child {
+  width: 250px;
+  height: 350px;
+  background: url('https://www.yunjac.com/images/main/section2_img3.jpg')no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/*---address---*/
+.address {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  clear: both;
+}
+
+.address p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.add {
+  padding: 60px 0;
+}
+
+.add>:nth-child(2) {
+  width: 320px;
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+.add input {
+  margin: 10px 0;
+}
+
+.add button {
+  margin-top: 10px;
+}
+
+/*---footer---*/
+footer {
+  width: 100%;
+  background: #f4f4ed;
+  text-align: left;
+  color: #707070;
+}
+
+.foo {
+  padding: 10% 5%;
+}
+
+.foo>:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.foo>:first-child p {
+  color: #9a948b;
+  line-height: 1.5rem;
+  cursor: pointer;
+}
+
+.foo>:first-child p:hover {
+  color: #707070;
+}
+
+.foo>:last-child {
+  margin-bottom: 1rem;
+}
+
+.foo section>:last-child {
+  text-align: right;
+}
+
+#header {
+  display: none;
+}
+
+/* labtop start */
+@media screen and (min-width: 1000px) {
+
+  /*---헤더---*/
+  .header1 {
+    display: none;
+  }
+
+
+  #header {
+    width: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color:inherit;
+    height: 80px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    display: block;
+    transition: top 0.4s;
+    z-index: 999;
+  }
+
+  #header section {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #header:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+
+  .lap-nav {
+    display: inline-block;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .lap-nav>ul>li {
+    float: right;
+    width: 9rem;
+    height: 23rem;
+    line-height: 3rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .lap-nav>ul>li>a {
+
+    padding: 1.3rem 0;
+    line-height: 4.5rem;
+    font-size: 1.2rem;
+    transition: 0.6s;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    color: #000;
+  }
+
+  .lap-nav>ul>li ul {
+    width: 100%;
+    height: 100%;
+    background-color:inherit;
+  }
+
+  .clearfix img {
+    width: 10rem;
+  }
+
+  .clearfix >:nth-child(3) {
+    width: 12rem;
+    margin-top:1.1rem;
+  }
+
+  .clearfix>li>ul>li {
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0);
+    color: #color: #000;
+    transition: 0.6s;
+    font-size: 0.8rem;
+  }
+
+
+  .lap-nav>ul>li>ul>li:hover {
+    color: #9a948b;
+    background: #f4f4ed;
+    border: 1px solid #f4f4ed;
+
+
+  }
+
+
+  .login {
+    width: 200px;
+  }
+
+
+  .login a {
+    text-align: center;
+    line-height: 4.7rem;
+    padding:0.3rem;
+    color: #000;
+  }
+
+  .login a:hover {
+    border-bottom: 2px solid #000;
+  }
+
+
+  .option {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .company{
+    background-color: inherit;
+    margin: 1.7rem 0 0 8rem;
+  }
+
+  .search img {
+    width: 20px;
+    cursor: pointer;
+    margin-top: 1.8rem ;
+  }
+
+
+
+  /*---메인---*/
+
+  .mainSlide_box {
+    height: 800px;
+    margin-bottom:120px;
+  }
+
+  .mainSlide_panel li {
+    height: 800px;
+  }
+
+  .mainSlide_panel li .background-scale {
+    height: 850px;
+  }
+
+  .headline_title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .headline_explain {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+
+
+/*---article111---*/
+/*제품 슬라이드*/
+
+.best {
+  display: none;
+}
+
+.container{
+  display: block;
+  width: 1200px;
+  margin:0 auto;
+}
+
+.slick-slide {
+  width: 1200px;
+  margin-bottom: 100px;
+
+}
+
+.slick-slide img {
+    width: 100%;
+      cursor: pointer;
+}
+
+.container h2{
+text-align: center;
+}
+
+.th1{
+  position: relative;
+  margin-top:3rem;
+}
+
+.th1 img {
+  width: 100%;
+}
+
+.th1 h4{
+}
+
+.th1 p{
+  padding-top : 1rem;
+}
+
+.th1:hover .co{
+  opacity: 1;
+  transition: 0.7s;
+}
+
+.co{
+  width: 80%;
+  height:15rem;
+  margin: 20% 10%;
+  background:  rgba(244,244,237,0.8);
+  text-align: center;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  color: #9a948b;
+  padding: 3.5rem 0;
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.co p{
+  color: #9a948b;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+
+
+
+
+/*---article222---*/
+
+.new {
+  display: none;
+}
+.star {
+  display: block;
+  width: 1200px;
+  margin: 0 auto;
+  height: 800px;
+  position: relative;
+  text-align: right;
+}
+
+.star h5 {
+  width: 400px;
+  position: absolute;
+  font-size: 2rem;
+  top: 40%;
+  left: 72%;
+  transform: translate(-50%, -50%);
+}
+
+.star p {
+  position: absolute;
+  font-size: 1.5rem;
+  line-height:2rem;
+  width: 400px;
+  top: 55%;
+  left: 72%;
+  transform: translate(-50%, -50%);
+}
+
+.back11 {
+  position: absolute;
+  top: 45%;
+  left: 23%;
+  transform: translate(-50%, -50%);
+}
+
+.back11>:first-child {
+  width: 500px;
+  height: 650px;
+  background: url('https://www.yunjac.com/images/main/section1_img1.png');
+  background-size: cover;
+  background-position:left center;
+}
+
+.back11-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.back11-1>:first-child {
+  width: 400px;
+  height: 300px;
+  background: url('https://i.imgur.com/n92dtmz.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.back11-2 {
+  position: absolute;
+  top: 80%;
+  left: 74%;
+  transform: translate(-50%, -50%);
+}
+
+.back11-2>:first-child {
+  width: 320px;
+  height: 400px;
+  background: url('https://i.imgur.com/rWtEoLq.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.text11 {
+  position: absolute;
+  top: 75%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.text11>:first-child {
+  width: 500px;
+  height: 300px;
+  background: #eee;
+  background-size: cover;
+  background-position: top center;
+}
+
+.yunjeong {
+  position: absolute;
+  top: 52%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+}
+
+.yunjeong>:first-child {
+  width: 400px;
+  height: 600px;
+  background: url('https://www.yunjac.com/images/main/section1_img4.jpg')no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+/*---article333---*/
+
+.eseence {
+  display: none;
+}
+
+.skin {
+  display: block;
+  width: 1200px;
+  margin: 0 auto;
+  height: 900px;
+  position: relative;
+  margin-bottom:100px;
+}
+
+.skin h5 {
+  width: 400px;
+  font-size: 2rem;
+  position: absolute;
+  top: 40%;
+  left: 27%;
+  transform: translate(-50%, -50%);
+}
+
+.skin p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  position: absolute;
+  width: 400px;
+  top: 62%;
+  left: 27%;
+  transform: translate(-50%, -50%);
+}
+
+.back22 {
+  position: absolute;
+  top: 43%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+.back22>:first-child {
+  width: 500px;
+  height: 650px;
+  background: url('https://www.yunjac.com/images/main/section2_img1.png');
+  background-size: cover;
+  background-position: right center;
+}
+
+.back22-2 {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.back22-2>:first-child {
+  width: 350px;
+  height: 450px;
+  background: url('https://i.imgur.com/rV8davy.png');
+  background-size: cover;
+  background-position: right center;
+}
+
+.back22-3 {
+  position: absolute;
+  top: 70%;
+  left: 78%;
+  transform: translate(-50%, -50%);
+}
+
+.back22-3>:first-child {
+  width: 320px;
+  height: 400px;
+  background: url('https://i.imgur.com/rWtEoLq.png');
+  background-size: cover;
+  background-position: right center;
+}
+
+.text22 {
+  position: absolute;
+  top: 70%;
+  left: 39%;
+  transform: translate(-50%, -50%);
+}
+
+.text22>:first-child {
+  width: 500px;
+  height: 300px;
+  background: #eee;
+  background-size: cover;
+  background-position: top center;
+}
+
+.care {
+  position: absolute;
+  top: 50%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+}
+
+.care>:first-child {
+  width: 400px;
+  height: 600px;
+  background: url('https://www.yunjac.com/images/main/section2_img3.jpg')no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+
+
+/*---하단 아티클---*/
+
+.address {
+  height: 350px;
+}
+
+.address p {
+  font-size: 1rem;
+}
+
+.add {
+  padding: 82px 0;
+}
+
+footer {
+  width: 100%;
+  background: #f4f4ed;
+  text-align: left;
+  color: #707070;
+}
+
+.foo {
+  width:1200px;
+  margin:0 auto;
+  padding: 5% 5%;
+}
+
+    </style>
+<body>
+
+  <main>
+
+    <article class="header1">
+      <div class="head1">
+        <div id="mySidenav" class="sidenav">
+          <section>
+            <a href="#"><img src="https://i.imgur.com/a4xtP65.png" alt=""></a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          </section>
+          <section>
+            <a href="#">로그인</a>
+            <a href="#">회원가입</a>
+            <a href="#">내정보</a>
+          </section>
+          <section>
+            <ul>
+              <li class="main-li">brand</li>
+              <ul>
+                <li class="sub-li">KOREAN HERBS</li>
+                <li class="sub-li">brand story</li>
+              </ul>
+            </ul>
+            <ul>
+              <li class="main-li">product</li>
+              <ul>
+                <li class="sub-li">skincare</li>
+                <li class="sub-li">make up</li>
+                <li class="sub-li">MOTHER & BABY</li>
+                <li class="sub-li">LIFECARE</li>
+              </ul>
+            </ul>
+            <ul>
+              <li class="main-li">new</li>
+            </ul>
+            <ul>
+              <li class="main-li">이벤트</li>
+            </ul>
+            <ul>
+              <li class="main-li">Q & A</li>
+            </ul>
+            <ul>
+              <li class="main-li">공지사항</li>
+            </ul>
+          </section>
+        </div>
+        <span style="font-size:25px;cursor:pointer;width:6rem;padding:1rem 0 0 0.7rem" onclick="openNav()">&#9776;</span>
+
+        <div class="head1-logo">
+          <img src="https://i.imgur.com/a4xtP65.png" alt="">
+        </div>
+
+        <div class="head1-op">
+          <select class="company" name="company">
+            <option label="KR">
+            <option value="jp">JP</option>
+            <option value="en">EN</option>
+            <option value="cn">CN</option>
+          </select>
+          <section class="search">
+            <img src="http://www.myiconfinder.com/uploads/iconsets/256-256-882b9c2e59aaadf68a5889e2f8f70dd3.png" alt="">
+          </section>
+        </div>
+      </div>
+
+      <div class="head2">
+        <div>
+          <ul>
+            <li>
+              <p>NEW</p>
+            </li>
+            <li>
+              <p>BRAND</p>
+            </li>
+            <li>
+              <p>PORODUCT</p>
+            </li>
+            <li>
+              <p>STORE</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article id="header">
+    <section>
+
+      <div class="login">
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+        <a href="#">내정보</a>
+      </div>
+
+      <nav class="lap-nav">
+        <ul class="clearfix">
+          <li><a>new</a>
+            <ul>
+            </ul>
+          </li>
+          <li><a>brand</a>
+            <ul>
+              <li>brand story</li>
+              <li>korean herbs</li>
+            </ul>
+          </li>
+          <li><div onclick="window.location.href='#'">
+            <img src="https://www.yunjac.com/images/logo-blk.png" alt="">
+          </div></li>
+          <li><a>product</a>
+            <ul>
+              <li>skin care</li>
+              <li>make up</li>
+              <li>mother&baby</li>
+              <li>life care</li>
+            </ul>
+          </li>
+          <li><a>store</a>
+            <ul>
+              <li>신세계백화점</li>
+              <li>롯데백화점</li>
+              <li>현대백화점D</li>
+              <li>아울렛</li>
+              <li>로드샵</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="option">
+        <select class="company" name="company">
+          <option label="KR">
+          <option value="jp">JP</option>
+          <option value="en">EN</option>
+          <option value="cn">CN</option>
+          </select>
+        <div class="search">
+          <img src="http://www.myiconfinder.com/uploads/iconsets/256-256-882b9c2e59aaadf68a5889e2f8f70dd3.png" alt="">
+        </div>
+      </div>
+
+    </section>
+  </article>
+
+  <article class="mainSlide_box">
+  <ul class="mainSlide_panel">
+    <li>
+      <div class="title_headline">
+        <h4 class="headline_title">피부, 더 빛나는 작품으로</h4>
+        <h5 class="headline_explain"><Br>맑고 단단한 도자기처럼<br>안색과 결을 밝혀주는 필수 앰플 세럼</h5>
+      </div>
+      <div class="background-scale list01"></div>
+    </li>
+    <li>
+      <div class="title_headline">
+        <h4 class="headline_title">내 피부에 꼭 맞는 <br> 화사한 # 도자기 쿠션</h4>
+        <h5 class="headline_explain"><br>화사한 윤기와 매끄러운 피부결<br>도자기 피부를 손쉽게 연출하세요</h5>
+      </div>
+      <div class="background-scale list02"></div>
+    </li>
+    <li>
+      <div class="title_headline">
+        <h4 class="headline_title">셀럽들이 고른 바로 그 제품</h4>
+        <h5 class="headline_explain"><br>연약한 아기의 첫 피부를 위한 안심케어<br>연작 베이비후드</h5>
+      </div>
+      <div class="background-scale list03"></div>
+    </li>
+  </ul>
+  <div class="mainSlide_btn_tab">
+    <ul class="mainSlide_btn_tab_list">
+      <li class="on"></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul class="play_box">
+      <li class="play"></li>
+      <li class="stop"></li>
+    </ul>
+  </div>
+  <div class="mainSlide_btn_perv"></div>
+  <div class="mainSlide_btn_next"></div>
+</article>
+
+</main>
+
+
+<article class="best">
+  <h3>Best Sellers</h3>
+  <div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://www.yunjac.com/public/2019/09/26/11/1/1/e2e5e56d-1b4b-48c8-8873-e7e87aeb657a.png">
+      <div class="swiper-text">
+        <h5>전초 컨센트레이트</h5>
+        <p>105,000원</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <img src="https://www.yunjac.com/public/batch/prods/111200008.png">
+      <div class="swiper-text">
+        <h5>전초 에센셜 크림</h5>
+        <p>100,000원</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <img src="https://www.yunjac.com/public/batch/prods/111200005.png">
+      <div class="swiper-text">
+        <h5>전초 에센셜 토너</h5>
+        <p>55,000원</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <img src="https://www.yunjac.com/public/2019/12/30/14/24/50/165d9014-c3f3-4fa9-8916-20af26eca2f2.png">
+      <div class="swiper-text">
+        <h5>전초 아이 컨센트레이트</h5>
+        <p>100,000원</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <button>view more</button>
+</article>
+
+
+<article class="container">
+    <h2>Best Sellers</h2>
+    <section class="customer-logos slider">
+      <div class="slide">
+        <div class="th1">
+          <img src="https://www.yunjac.com/public/2019/09/26/11/1/1/e2e5e56d-1b4b-48c8-8873-e7e87aeb657a.png" alt="">
+          <div class="co">
+            <h4>전초 컨센트레이트</h4>
+            <p># 장벽강화 <br>
+              # 피부밀도상승 <br>
+              # 유수분밸런스</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="slide">
+        <div class="th1">
+          <img src="https://www.yunjac.com/public/batch/prods/111200005.png">
+          <div class="co">
+            <h4>전초 컨센트레이트</h4>
+            <p># 장벽강화 <br>
+              # 피부밀도상승 <br>
+              # 유수분밸런스</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="th1">
+          <img src="https://www.yunjac.com/public/batch/prods/111200008.png">
+          <div class="co">
+            <h4>전초 컨센트레이트</h4>
+            <p># 장벽강화 <br>
+              # 피부밀도상승 <br>
+              # 유수분밸런스</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="th1">
+          <img src="https://www.yunjac.com/public/batch/prods/111200004.png">
+          <div class="co">
+            <h4>전초 컨센트레이트</h4>
+            <p># 장벽강화 <br>
+              # 피부밀도상승 <br>
+              # 유수분밸런스</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="th1">
+          <img src="https://www.yunjac.com/public/batch/prods/111200001.png">
+          <div class="co">
+            <h4>전초 컨센트레이트</h4>
+            <p># 장벽강화 <br>
+              # 피부밀도상승 <br>
+              # 유수분밸런스</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="th1">
+          <img src="https://www.yunjac.com/public/2019/11/25/11/25/49/cbf6a4c8-35b8-43c5-9249-3a55cfc4e08b.png">
+          <div class="co">
+            <h4>전초 컨센트레이트</h4>
+            <p># 장벽강화 <br>
+              # 피부밀도상승 <br>
+              # 유수분밸런스</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="th1">
+          <img src="https://www.yunjac.com/public/batch/prods/111200003.png">
+          <div class="co">
+            <h4>전초 컨센트레이트</h4>
+            <p># 장벽강화 <br>
+              # 피부밀도상승 <br>
+              # 유수분밸런스</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="th1">
+          <img src="https://www.yunjac.com/public/2019/12/30/14/24/50/165d9014-c3f3-4fa9-8916-20af26eca2f2.png">
+          <div class="co">
+            <h4>전초 컨센트레이트</h4>
+            <p># 장벽강화 <br>
+              # 피부밀도상승 <br>
+              # 유수분밸런스</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+
+
+
+  <article class="new">
+ <section class="back1">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="back1-1">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="text1">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="20" data-aos-duration="1300">
+     <h5>첫번째 뮤즈, 고윤정</h5>
+     <p>연작과 신인배우 고윤정의 만남
+     </p>
+   </div>
+ </section>
+ <section class="muse">
+   <div data-aos="fade-up" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000">
+   </div>
+   </section>
+</article>
+
+<article class="eseence">
+ <section class="back2">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="back2-2">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="text2">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="20" data-aos-duration="1300">
+     <h5>바디피부, 작품이되다</h5>
+     <p>홈 플렌트 이펙트의 강력한 생명<br> 에너지로
+속부터 탄탄한 바디 피부</p>
+   </div>
+ </section>
+ <section class="sence">
+   <div data-aos="fade-up" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000">
+   </div>
+   </section>
+</article>
+
+
+
+<article class="star">
+ <section class="back11">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="back11-1">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="back11-2">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="text11">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="20" data-aos-duration="1300">
+     <h5>첫번째 뮤즈, 고윤정</h5>
+     <p>연작과 신인배우 고윤정의 만남
+     </p>
+   </div>
+ </section>
+ <section class="back11-1">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="yunjeong">
+   <div data-aos="fade-up" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000">
+   </div>
+   </section>
+</article>
+
+<article class="skin">
+ <section class="back22">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="text22">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="20" data-aos-duration="1300">
+     <h5>바디피부, 작품이되다</h5>
+     <p>홈 플렌트 이펙트의 강력한 생명<br> 에너지로
+속부터 탄탄한 바디 피부</p>
+   </div>
+ </section>
+ <section class="back22-2">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="back22-3">
+   <div data-aos="zoom-in" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000"></div>
+ </section>
+ <section class="care">
+   <div data-aos="fade-up" data-aos-offset="200" data-aos-delay="0" data-aos-duration="1000">
+   </div>
+   </section>
+</article>
+
+
+<div class="main-pic">
+<video autoplay muted loop id="myVideo" width="100%" controls>
+   <source src="http://dadub.dothome.co.kr/mp4/media-file.mp4">
+   </video>
+</div>
+
+
+<article class="address">
+<div class="add">
+<p>추첨을 통하여 신제품 교환권을 보내드립니다</p>
+<input type="email" name="email" placeholder="Email Address"><br>
+<label><input type="checkbox" checked="checked" name="subscribe"> 이메일 수신에 동의합니다</label><Br>
+<button>신청하기</button>
+</div>
+</article>
+
+<footer>
+  <div class="foo">
+  <section>
+    <div>
+    <p>(주)신세계인터네셔날</p>
+    <p>대표이사: 장재영,이길한,손문국</p>
+      <p>대표전화: 1644-4490</p>
+        <p>저작권보호방침</p>
+          </div>
+          <div>
+            <p>SITEMAP</p>
+            <p>CONTACT</p>
+          </div>
+        </section>
+          <section>
+            © 2018 SHINSEGAE INTERNATIONAL. ALL RIGHTS RESERVED
+          </section>
+  </div>
+        </footer>
+
+
+
+        <script>
+        //셀러 슬라이드//
+            $(document).ready(function() {
+              $('.customer-logos').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2500,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 3
+                  }
+                }, {
+                  breakpoint: 520,
+                  settings: {
+                    slidesToShow: 3
+                  }
+                }]
+              });
+            });
+          </script>
+
+        <script>
+          //베스트 슬라이드
+        var swiper = new Swiper('.swiper-container', {
+              slidesPerView: 1.6,//슬라이드 표시
+              spaceBetween: 40,
+              centeredSlides: true,
+              grabCursor: true,
+              loop: true,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+            });
+            </script>
+
+<script>
+//비디오 오토//
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+if (video.paused) {
+video.play();
+btn.innerHTML = "Pause";
+} else {
+video.pause();
+btn.innerHTML = "Play";
+}
+}
+</script>
+
+
+<script>
+   AOS.init();
+ </script>
+
+
+ <script>
+/*네비게이션 픽스*/
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("header").style.top = "0";
+  } else {
+    document.getElementById("header").style.top = "-80px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+
+<script>
+  /*네비게이션*/
+  $(function() {
+    var $firstMenu = $('nav > ul > li '),
+      $header = $('#header');
+
+    $firstMenu.mouseenter(function() {
+        $header.stop().animate({
+          height: '400px'
+        });
+      })
+      .mouseleave(function() {
+        $header.stop().animate({
+          height: '80px'
+        });
+      });
+
+  });
+</script>
+
+<script>
+  //사이드 메뉴//
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+</script>
+
+<script>
+
+  //메인 슬라이드//
+
+$(document).ready(function(){
+  var i = $(".mainSlide_btn_tab_list .on").index();
+  var len = $(".mainSlide_btn_tab_list li").length;
+
+  $(".mainSlide_panel li").eq(0).children(".title_headline").addClass("on");
+
+  $(".mainSlide_btn_perv").click(function(){
+    if(i == 0) {
+      i = len - 1;
+    }else {
+      i = i - 1;
+    }
+    clearInterval(auto);
+    Slide();
+  });
+  $(".mainSlide_btn_next").click(function(){
+    if(i == len-1) {
+      i = 0;
+    }else {
+      i = i + 1;
+    }
+    clearInterval(auto);
+    Slide();
+
+  });
+  var play_btn = true;
+  $(".mainSlide_btn_tab_list li").click(function(){
+    i = $(this).index();
+    Slide();
+    if(play_btn){
+    clearInterval(auto);
+    auto = setInterval(function(){
+
+        if(i == len-1) {
+        i = 0;
+      }else {
+        i = i + 1;
+      }
+      Slide();
+    },6000);
+    };
+  });
+
+  $(".stop").click(function(){
+    $(".stop").css("display","none");
+    $(".play").css("display","block");
+    play_btn = false;
+    clearInterval(auto);
+
+  });
+  $(".play").click(function(){
+    $(".play").css("display","none");
+    $(".stop").css("display","block");
+    play_btn = true;
+    clearInterval(auto);
+    auto = setInterval(function(){
+
+        if(i == len-1) {
+        i = 0;
+      }else {
+        i = i + 1;
+      }
+      Slide();
+    },6000);
+  });
+  $(".mainSlide_btn_perv").mouseenter(function(){
+    clearInterval(auto);
+  });
+  $(".mainSlide_btn_next").mouseenter(function(){
+    clearInterval(auto);
+  });
+
+  $(".mainSlide_btn_tab_list li").mouseenter(function(){
+    //clearInterval(auto);
+  });
+
+  function Slide() {
+    $(".mainSlide_btn_tab_list li").removeClass("on");
+    $(".mainSlide_btn_tab_list li").eq(i).addClass("on");
+
+    $(".mainSlide_panel li").stop().fadeOut(800);
+    $(".mainSlide_panel li").eq(i).stop().fadeIn(800);
+
+    $(".title_headline").removeClass("on");
+
+    $(".mainSlide_panel li").eq(i).children(".title_headline").addClass("on");
+  }
+
+var auto = setInterval(function(){
+    if(i == len-1) {
+    i = 0;
+  }else {
+    i = i + 1;
+  }
+  Slide();
+},6000);
+
+});
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        
+        h1 {
+            text-align: center;
+            font-weight: 300;
+        }
+        /* header 상단 고정*/
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            z-index: 1000;
+        }
+        /* optional */
+        .header-logo {
+            background-color:#4d2600;
+        }
+
+        .container {
+            max-width: 1000px;
+        }
+        
+        .logo {
+            display: block;
+            width: 400px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        /* 로그인 회원가입 고객센터*/
+        .btns-signin-signup {
+            position: absolute;
+            right: 5px;
+            top: 50px;
+            width: 400px;
+            height: 30px;
+            margin: 0 auto;
+            text-align: center;
+            
+        }
+        
+        .btns-signin-signup a {
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+        }
+
+        section {
+            margin-top: 230px;
+        }
+        
+        .shopping {
+            margin: 0 auto;
+            margin: 20px 0 20px 0;
+            text-align: center;
+        }
+
+        .shopping > span {
+            margin: 0 30px 0 30px;
+            
+        }
+
+        .shopping a:hover {
+            font-weight: bold;
+            color: #4d2600;
+        }
+
+        #slider {
+            position: relative;
+            overflow: hidden;
+            margin: 20px auto 0 auto;
+            border-radius: 4px;
+            
+        }
+
+        #slider ul {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            height: 200px;
+            list-style: none;
+        }
+
+        #slider ul li {
+            position: relative;
+            display: block;
+            float: left;
+            margin: 0;
+            padding: 0;
+            width: 700px;
+            height: 400px;
+            background: #ccc;
+            text-align: center;
+            line-height: 300px;
+            
+        }
+
+        a.control_prev,
+        a.control_next {
+            position: absolute;
+            top: 40%;
+            z-index: 1;
+            display: block;
+            padding: 4% 3%;
+            width: auto;
+            height: auto;
+            background: #2a2a2a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        a.control_prev:hover,
+        a.control_next:hover {
+            opacity: 1;
+            -webkit-transition: all 0.2s ease;
+        }
+
+        a.control_prev {
+            border-radius: 0 2px 2px 0;
+        }
+
+        a.control_next {
+            right: 0;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .slider_option {
+            position: relative;
+            margin: 10px auto;
+            width: 160px;
+            font-size: 18px;
+        }
+
+        .items-container {
+            display: block;
+            position: relative;
+            border-radius: 5px;
+            border: 1px solid black;
+            width: 700px;
+            height: 300px;
+            text-align: center;
+            margin: auto;
+            padding: 50px;
+            margin-bottom: 30px;
+        }
+
+        .items-container a {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px;
+        }
+
+        .items-container a:hover {
+            font-weight: bold;
+            color: #4d2600;
+        }
+        
+        .items-container-wholebean {
+            margin: 40px 0 40px 0;
+        }
+
+        .items-container-stickcoffee-capsulecoffee {
+            margin: 50px 0 50px 0;
+        }
+
+        footer {
+            background-color: #4d2600;
+            padding: 5px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer li {
+            margin-bottom: 10px;
+        }
