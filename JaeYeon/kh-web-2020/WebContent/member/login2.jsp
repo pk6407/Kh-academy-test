@@ -2,9 +2,6 @@
 <%@page import="bean.MemberDao" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<jsp:useBean id="dao" class="bean.MemberDao"/>
-    
 <%
 	//response.setContentType("text/html;charset=utf-8");
 	String mid = request.getParameter("mid");
@@ -15,8 +12,8 @@
 	//response.sendRedirect("../index.jsp");
 	
 	
-	//MemberDao dao = new MemberDao();
-	boolean b = dao.login(mid, pwd);
+	MemberDao dao = new MemberDao();
+	boolean b = dao.login(mid,pwd);
 	
 	if(b){
 	session.setAttribute("mid",mid);
@@ -26,7 +23,7 @@
 		%>
 		<script>
 			alert('fail');
-			location.href='../index.jsp';
+			location.href = '../index.jsp';
 		</script>
-	
-<% } %>
+		
+	<% } %>

@@ -5,9 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class MemberDao {
-	Connection conn;
-	PreparedStatement ps;
-	ResultSet rs;
+	Connection conn;	//database의 연결 정보
+	PreparedStatement ps;	// 문자열로 되어 있는 sql문장을 sql 실행문장
+	ResultSet rs;	// select문의 실행결과
+	
+	
 	
 	public MemberDao() {
 		conn = new Application().getConn();
@@ -16,14 +18,17 @@ public class MemberDao {
 	public boolean login(String mid, String pwd) {
 		boolean b = true;
 		try {
-			String sql = "select * from member where mid=? and pwd=? ";
+			String sql = "select count(mid) cnt from member where mid=? and pwd=? ";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, mid);
 			ps.setString(2, pwd);
 			
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				b=true;
+				int cnt = rs.getInt("cnt");
+				if(cnt >=1) {
+					b=true;
+				}
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();

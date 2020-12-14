@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Index1130</title>
+<title>Index</title>
 <script src='./lib/jquery-3.5.1.min.js'></script>
 </head>
 <body>
