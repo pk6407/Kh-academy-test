@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/*방명록과 관련한 레이아웃*/
+
+#guestbook{
+	width: 550px;
+	margin:0 auto;
+	
+}
+#guestbook>#frm_gb {
+	margin-bottom : 25px;
+	text-align:right;
+}
+#guestbook>#list .mid{
+	font-size : 10pt;
+	color : #555;
+	width:270px;
+	display:inline-block;
+	
+}
+#guestbook>#list .mdate{
+	font-size : 10pt;
+	color : #555;
+	width:150px;
+	display:inline-block;
+	border:1px solid #aaa;
+	
+}
+#guestbook>#list textarea{
+	width: 560px;
+	
+}
+#guestbook>#list .btns {
+	text-align : right;
+}
+#guestbook>#list .btns>input[type=button]{
+	font-size : 9pt;
+	color : #555;
+	border-radius:15px;
+	border:0.5px solid #aaa;
+}
