@@ -37,4 +37,6 @@ public class GuestBookVo {
 	public void setDoc(String doc) {
 		this.doc = doc;
 	}
+	
+	
 }

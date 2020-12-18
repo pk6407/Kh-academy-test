@@ -6,8 +6,6 @@ public class MemberVo {
 	String name;
 	String email;
 	String phone;
-	String zipcode;
-	String address;
 	
 	public String getMid() {
 		return mid;
@@ -51,4 +49,7 @@ public class MemberVo {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	String zipcode;
+	String address;
+	
 }

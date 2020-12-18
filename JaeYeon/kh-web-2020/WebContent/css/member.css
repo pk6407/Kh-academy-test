@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/*--------------공통부분----------------*/
+#member .btns{
+	text-align:center;
+}
+#member .btns>input{
+	border:1px solid #ddc;
+	border-radius:10px;
+}
+
+
+#member{
+	width:100%;
+	padding-right:20px;
+	box-sizing:border-box;
+}
+
+#member #frm_member input{
+	border:1px solid #bbb;
+	border-radius:10px;
+}
+
+#member #frm_member>div{
+	display: inline-block;
+	float:right;
+}
+
+#member .title{
+	margin-top:6px;
+	background-color:#555;
+	padding:4px 0;
+	color:#fff;
+}
+#member span{
+	display:inline-block;
+}
+#member .no{width:70px;}
+#member .mid{width:100px;}
+#member .name{width:120px;}
+#member .email{width:200px;}
+#member .mdate{width:110px;}
+
+#member .items>div{
+	line-height:25px;
+}
+#member .items>div:hover{
+	background-color:#bbb;
+	cursor:pointer;
+}
+
+#member .items>div:last-child{
+	border-bottom:2px solid #aaa;
+	margin-bottom:10px;
+}
+
+#member .paging{
+	text-align:center;
+}
+#member .paging>input{
+	border:1px sloid #eee;
+	border-radius:10px;
+}
+
+#member .paging>input:hover{
+	cursor:pointer;
+}
+
+/*------------insert-----------------*/
+#member .insert{
+	position:relative;
+}
+#member .insert>label{
+	display:inline-block;
+	width:90px;
+	text-align:right;
+	line-height:24px;
+}
+
+#member .insert>img{
+	position:absolute;
+	top:5px;
+	right:25px;
+}
+
+
+/*-----------update-------------------*/
+
+#member .update>label{
+	display:inline-block;
+	width:90px;
+	text-align:right;
+	line-height:24px;
+}
+
+#member .update img{
+	margin-top : 10px;
+}

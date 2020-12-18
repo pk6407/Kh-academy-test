@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>func_ajax</title>
+<title>func_load</title>
 </head>
 <body>
 <div id ='func_ajax'>
-	<h2>ajax in jQuery을 사용한 구구단(JSON)</h2>
+	<h2>ajax in jQuery을 사용한 구구단(LOAD)</h2>
 	<form id = 'frm' name='frm' method='post'>
 		<label>단수를 입력하세요 : </label>
 		<input type='text' size ='4' name='dan' value='9'/>
@@ -23,25 +23,7 @@
 $('#btnRun').on('click', function(){
 	
 	let param = $('#frm').serialize();
-	$.ajax({
-	type : 'get',
-	url : './jquery/gugudan_json.jsp',
-	data : param,
-	
-	dataType : 'json',
-	success : function(json, status){
-		var temp = '';
-		for(var i=0; i<json.length; i++){
-			temp += json[i] + '<br/>';
-		}
-		$('#result').html(temp);
-	},
-	error : function(xhr, status, error){ 		
-		alert(status);
-	}
-	
-	});
-
+	$('#result').load('./jquery/gugudan.jsp', param);
 });
 </script>
 </body>

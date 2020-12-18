@@ -16,6 +16,7 @@
 	box-shadow : 2px 2px 4px #aaa;
 	border-radius:12px;
 	margin-right:7px;
+	margin-bottom:14px;
 	background-color:#dee;
 }
 .emp>div:first-child{
@@ -32,7 +33,7 @@
 	<h2>사원조회(JSON)</h2>
 	<form name='frm'method='post' id='frm'>
 		<label>검색어를 입력하세요</label>
-		<input type="text" name='findStr'placeholder='성명,이메일,연락처로 검색'/>
+		<input type="text" size='30' name='findStr'placeholder='성명,이메일,연락처로 검색'/>
 		<input type="button" value='검색' id='btnFind' />
 	</form>
 	<hr/>

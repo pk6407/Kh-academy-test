@@ -29,6 +29,7 @@
 	<li><a href='index.jsp?inc=./jquery/menu_ui.jsp'>MENU_UI</a></li>
 	<li><a href='index.jsp?inc=./jquery/func_ajax.jsp'>AJAX 함수 호출</a></li>
 	<li><a href='index.jsp?inc=./jquery/func_ajax_json.jsp'>AJAX 함수 호출(JSON)</a></li>
+	<li><a href='index.jsp?inc=./jquery/func_load.jsp'>LOAD 함수 호출</a></li>
 	
 </ol>
 </body>

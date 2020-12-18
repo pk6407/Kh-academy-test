@@ -13,7 +13,7 @@
 
 		for (int i = 1; i < 10; i++) {
 
-		list.add("'" + dan + "*" + i + "=" + (dan * i) + "'");
+		list.add("'"+ dan + "*" + i + "=" + (dan * i)+"'");
 		
 		}
 		

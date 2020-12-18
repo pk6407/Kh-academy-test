@@ -5,7 +5,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% 
+<% //사용자의 요청정보를 dao에 전달한 후 그 결과를 다시 사용자에게 반환
 	String findStr = request.getParameter("findStr");
 	
 	EmpDao dao = new EmpDao();
