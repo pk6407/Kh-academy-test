@@ -37,6 +37,7 @@ public class MemberDao {
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}finally {
+			disConn();
 			return b;
 		}
 	}
@@ -104,7 +105,7 @@ public class MemberDao {
 			return list;
 		}
 	}
-
+	
 	public String insert(MemberVo vo){
 		String msg = "회원 정보가 정상적으로 저장되었습니다.";
 		try {
@@ -140,7 +141,6 @@ public class MemberDao {
 			return msg;
 		}
 	}
-	
 	public String update(MemberVo vo){
 		String msg = "회원 정보가 정상적으로 수정되었습니다.";
 		try {
@@ -159,7 +159,7 @@ public class MemberDao {
 			String sql = "delete from members where mid=? and pwd=?";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, vo.getMid());
-			ps.setString(2, vo.getPwd());
+			ps.setString(2,vo.getPwd());
 			
 			int rowCnt = ps.executeUpdate();
 			if(rowCnt<1) {
@@ -208,9 +208,9 @@ public class MemberDao {
 	public void disConn() {
 		try {
 			conn.close();
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
+ 
 }
