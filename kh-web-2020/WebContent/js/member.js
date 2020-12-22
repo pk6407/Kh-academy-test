@@ -3,7 +3,7 @@
  * 작성자 : 김남호
  * 작성일 : 2020.12.21.
  */
- function getID(id){ return document.getElementById(id)}
+function getID(id){ return document.getElementById(id)}
 
 var member = function(){
 	let url = 'index.jsp?inc=./member/';
@@ -23,7 +23,9 @@ var member = function(){
 			var frm = document.frm_member;
 			var pwd = prompt("회원정보를 삭제하시려면 암호를 입력하세요");
 			if(pwd != null){
-				frm.action = url + 'result.jsp';
+				frm.action = 'member.do?job=delete';
+				frm.pwd.value = pwd;
+				frm.mid.disabled=false;
 				frm.submit();
 			}
 		}
@@ -86,8 +88,15 @@ var member = function(){
 	if(btnSave != null){
 		btnSave.onclick = function(){
 			var frm = document.frm_member;
-			//frm.enctype = 'multipart/form-data';
-			frm.action = url + 'result.jsp';
+			
+			//암호와 암호확인의 일치여부
+			if(frm.pwd.value != frm.pwdConfirm.value){
+				alert('암호를 확인해 주소~');
+				return;
+			}
+			
+			frm.enctype = 'multipart/form-data';
+			frm.action = 'member.do?job=insert';
 			frm.submit();
 		}
 	}
@@ -96,7 +105,7 @@ var member = function(){
 	if(btnSelect != null){
 		btnSelect.onclick = function(){
 			var frm = document.frm_member;
-			frm.action = url + 'select.jsp';
+			frm.action = 'member.do?job=select';
 			frm.submit();
 		}
 	}
@@ -105,7 +114,7 @@ var member = function(){
 	if(btnFind != null){
 		btnFind.onclick = function(){
 			var frm = document.frm_member;
-			frm.action = url + 'select.jsp';
+			frm.action = "member.do?job=select";
 			frm.nowPage.value = 1;
 			frm.submit();
 		}
@@ -124,13 +133,13 @@ var member = function(){
 
 function goPage(page){
 	var frm = document.frm_member;
-	frm.action = 'index.jsp?inc=./member/select.jsp';
+	frm.action = 'member.do?job=select';
 	frm.nowPage.value = page;
 	frm.submit();
 }
 function view(mid){
 	var frm = document.frm_member;
-	frm.action = 'index.jsp?inc=./member/view.jsp';
+	frm.action = 'member.do?job=view';
 	frm.mid.value = mid;
 	frm.submit();
 }
