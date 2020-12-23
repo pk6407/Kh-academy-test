@@ -1685,32 +1685,67 @@ step 2. 외부 프로퍼티 파일 정보를 <properties/>를 사용하여 정�
 step 3.
 프로퍼티로 적용할 부분을 ${프로퍼티명}으로 수정한다.
 WEB-INF/classes/config.xml
-1. <?xml version="1.0" encoding="UTF-8" ?>
-2. <!DOCTYPE configuration
-3. PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-4. "http://mybatis.org/dtd/mybatis-3-config.dtd">
-5.
-6. <configuration>
-7.
-8. <properties resource="config.properties"/>
-9.
-10.
-11. <environments default="development">
-12. <environment id="development">
-13. <transactionManager type="JDBC"/>
-14. <dataSource type="POOLED">
-15. <property name="driver" value="${driver}"/>
-16. <property name="url" value="${url}"/>
-17. <property name="username" value="${username}"/>
-18. <property name="password" value="${password}"/>
-19. </dataSource>
-20. </environment>
-21. </environments>
-22.
-23. <mappers>
-24. <mapper resource="member.xml"></mapper>
-25. <mapper resource="board/board.xml"></mapper>
-26. </mappers>
-27.
-28. </configuration>
-    
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+<properties resource="config.properties"/>
+
+
+<environments default="development">
+<environment id="development">
+<transactionManager type="JDBC"/>
+<dataSource type="POOLED">
+<property name="driver" value="${driver}"/>
+<property name="url" value="${url}"/>
+<property name="username" value="${username}"/>
+<property name="password" value="${password}"/>
+</dataSource>
+</environment>
+</environments>
+
+<mappers>
+<mapper resource="member.xml"></mapper>
+<mapper resource="board/board.xml"></mapper>
+</mappers>
+
+</configuration>
+```   
+- SqlSessionFactory 생성
+환경 설정부분에서 생성된 config.xml파일을 읽어들여 SqlSessionFactory를 생성해야 한다. mybatis를 사용하기 위해서는 Database별로 SqlSessionFactory를 생성해야 한다.
+SqlSessionFactory의 대부분은 싱글톤 형식으로 사용하기 때문에 static형으로 만들어 가져다 사용한다.
+src/begin/BoardFactory.java
+```java
+package begin;
+
+import java.io.Reader;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class BoardFactory {
+
+ // 드라이버를 로딩, Connection정보를 갖고 있음.
+ private static SqlSessionFactory factory;
+
+static{
+ try{
+ Reader reader=Resources.getResourceAsReader("config.xml");
+factory = new SqlSessionFactoryBuilder().build(reader);
+
+ }catch(Exception ex){
+ ex.printStackTrace();
+ }
+ }
+
+public static SqlSessionFactory getFactory(){
+return factory;
+}
+
+}
+```
