@@ -46,6 +46,7 @@ public class FileUpload {
 		vo.setPwd(mul.getParameter("pwd"));
 		vo.setZipcode(mul.getParameter("zipcode"));
 		vo.setPhoto(sysFile);
+		vo.setDelFile(mul.getParameter("delFile"));
 		
 		return vo;
 	}

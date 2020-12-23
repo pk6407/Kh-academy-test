@@ -102,6 +102,27 @@ public class MemberServlet extends HttpServlet{
 			rd = req.getRequestDispatcher(url + "result.jsp");
 			rd.forward(req, resp);
 			break;
+		case "modify":
+			String mid2 = req.getParameter("mid");
+			vo = dao.view(mid2);
+			
+			req.setAttribute("vo", vo);
+			rd = req.getRequestDispatcher(url + "update.jsp");
+			rd.forward(req, resp);
+			
+			break;
+		case "update":
+			FileUpload fu2 = new FileUpload(req);
+			vo = fu2.getMember();
+			page = fu2.getPage();
+			msg = dao.update(vo);
+			
+			req.setAttribute("msg", msg);
+			req.setAttribute("page", page);
+			rd = req.getRequestDispatcher(url+"result.jsp");
+			rd.forward(req, resp);
+			
+			break;
 		}
 	
 	}

@@ -141,9 +141,41 @@ public class MemberDao {
 			return msg;
 		}
 	}
+	
+	
 	public String update(MemberVo vo){
 		String msg = "회원 정보가 정상적으로 수정되었습니다.";
 		try {
+			String sql = "update members set"
+					   + "name =?, email=?, zipcode=?, address=?, phone=? ";
+			if(vo.getPhoto() != null && !vo.getPhoto().equals("")) {
+				sql += ", photo= '" + vo.getPhoto() + "'";
+			}
+			sql += " where mid=? and pwd=? ";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, vo.getName());
+			ps.setString(2, vo.getEmail());
+			ps.setString(3, vo.getZipcode());
+			ps.setString(4, vo.getAddress());
+			ps.setString(5, vo.getPhone());
+			ps.setString(6, vo.getMid());
+			ps.setString(7, vo.getPwd());
+			
+			int rowCnt = ps.executeUpdate();
+			if(rowCnt<1) {
+				msg = "회원정보 수정중 오류 발생.";
+				throw new Exception(msg);
+			}
+			
+			//이미지가 수정된 경우 기존 파일 삭제
+			if(vo.getPhoto() !=null && !vo.getPhoto().equals("")) {
+				File file = new File(FileUpload.saveDir + vo.getDelFile());
+				if(file.exists()) {
+					file.delete();
+				}
+			}
+			
 			
 		}catch(Exception ex) {
 			msg = ex.getMessage();

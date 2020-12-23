@@ -49,8 +49,7 @@ public class GuestBookDao { //사용자의 요청을 처리해주는 class(Dao,D
 				e.printStackTrace();
 			}
 			return list;
-		}
-		
+		}	
 	}
 	 public String insert(GuestBookVo vo){
 	      // create
