@@ -21,13 +21,17 @@ var member = function(){
 	if(btnDelete != null){
 		btnDelete.onclick = function(){
 			var frm = document.frm_member;
-			var pwd = prompt("회원정보를 삭제하시려면 암호를 입력하세요");
-			if(pwd != null){
-				frm.action = 'member.do?job=delete';
-				frm.pwd.value = pwd;
-				frm.mid.disabled=false;
-				frm.submit();
+			//var pwd = prompt("회원정보를 삭제하시려면 암호를 입력하세요");
+			var win = window.open('./member/input_pwd.jsp', 'win', 'width=400px, height=100px, left=300px, top=300px');
+			
+			win.onbeforeunload = function(){
+				if(frm.pwd.value != ''){
+					frm.action = 'member.do?job=delete';
+					frm.mid.disabled=false;
+					frm.submit();
+				}
 			}
+			
 		}
 	}
 	
@@ -35,16 +39,29 @@ var member = function(){
 	if(btnUpdate != null){
 		btnUpdate.onclick = function(){
 			var frm = document.frm_member;
-			//frm.enctype = 'multipart/form-data';
-			frm.action = url + 'result.jsp';
-			frm.submit();
+			
+			/*암호와 암호확인의일치여부
+			var pwd = prompt("회원정보를 수정하사갰습니까?");
+			if(pwd == null){
+				return;
+			}
+			frm.pwd.value = pwd;
+			*/
+			var win = window.open('./member/input_pwd.jsp','win', 'width=400px, height=100px, left=300px, top=300px');			
+			win.onbeforeunload = function(){
+				if(frm.pwd.value != ''){
+					frm.enctype = 'multipart/form-data'; //파일을 업로드
+					frm.action = 'member.do?job=update'; //수정된 정보를 저장
+					frm.submit();
+			}
 		}
-	}
-	
+	}	
+}
 	if(btnModify != null){
 		btnModify.onclick = function(){
 			var frm = document.frm_member;
-			frm.action = url + 'update.jsp';
+			frm.mid.disabled=false;
+			frm.action = 'member.do?job=modify'; //수정화면이동
 			frm.submit();
 		}
 	}
@@ -88,6 +105,32 @@ var member = function(){
 	if(btnSave != null){
 		btnSave.onclick = function(){
 			var frm = document.frm_member;
+			var checkFlag=true;
+			
+			/*example(html 태그에 pattern속성 미사용시)
+			var reg_mid = /[\w!$\-]{4,10}/;			
+			if(!reg_mid.test(frm.mid.value) ){
+				alert('mid');
+				checkFlag=false;
+			}
+			*/
+			
+			if(!frm.mid.checkValidity()){
+				alert('mid');
+				checkFlag=false;
+			}else if(!frm.name.checkValidity()){
+				alert('name');
+				checkFlag=false;
+			}else if(!frm.pwd.checkValidity()){
+				alert('pwd');
+				checkFlag=false;
+			}else if(!frm.email.checkValidity()){
+				alert('email');
+				checkFlag=false;
+			}else if(!frm.phone.checkValidity()){
+				alert('phone');
+				checkFlag=false;
+			}
 			
 			//암호와 암호확인의 일치여부
 			if(frm.pwd.value != frm.pwdConfirm.value){

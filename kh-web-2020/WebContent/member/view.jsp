@@ -35,10 +35,12 @@
 		
 			<c:choose>
 				<c:when test="${empty vo.photo }">
-					<img src='http:/;placehold.it/200X140' width='200px' height='140px' />
+				<img src='http://placehold.it/200X140' width='200px' height='140px' />
 				</c:when>
 				<c:otherwise>
+				<a href='./upload/${vo.photo }' download = '${vo.photo }'>
 				<img src='./upload/${vo.photo }' width='200px' height='140px' />
+				</a>
 			</c:otherwise>
 		</c:choose>
 		
@@ -50,10 +52,10 @@
 			<input type='button' value='목록으로' id='btnSelect' />
 		</div>
 		
-		<input type='text' name='findStr' value='${param.findStr }'/>
-		<input type='text' name='nowPage' value='${param.nowPage }'/>
-		<input type='text' name='delFile' value='${vo.photo }' />
-		<input type='text' name='pwd' />
+		<input type='hidden' name='findStr' value='${param.findStr }'/>
+		<input type='hidden' name='nowPage' value='${param.nowPage }'/>
+		<input type='hidden' name='delFile' value='${vo.photo }' />
+		<input type='hidden' name='pwd' />
 	</form>
 
 </div>

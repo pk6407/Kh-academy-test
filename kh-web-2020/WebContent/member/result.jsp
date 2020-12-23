@@ -14,8 +14,8 @@
 		작업이 처리 되었습니다.
 	</div>
 	<form name='frm_member' method='post'>
-		<input type='text' name='findStr' value='${page.findStr }'/>
-		<input type='text' name='nowPage' value='${page.nowPage }'/>
+		<input type='hidden' name='findStr' value='${page.findStr }'/>
+		<input type='hidden' name='nowPage' value='${page.nowPage }'/>
 	
 		<div class='btns'>
 			<input type='button' value='목록으로' id='btnSelect' />

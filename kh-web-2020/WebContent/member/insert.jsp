@@ -16,22 +16,22 @@
 	<h2>회원관리</h2>
 	<form name='frm_member' method='post' class='insert'>
 		<label>아이디</label>
-		<input type='text' name='mid' size='10' required /><br/>
+		<input type='text' name='mid' size='10' required pattern='[\W$!\-]'/><br/>
 		
 		<label>성명</label>
-		<input type='text' name='name' size='12'  required /><br/>
+		<input type='text' name='name' size='12'  required pattern='[a-zA-Z가-힣]'/><br/>
 		
 		<label>암호</label>
-		<input type='password' name='pwd' size='14'  required /><br/>
+		<input type='password' name='pwd' size='14'  required pattern='[\W$!\-]'/><br/>
 		
 		<label>암호확인</label>
-		<input type='password' name='pwdConfirm' size='14' /><br/>
+		<input type='password' name='pwdConfirm' size='14' pattern='[\W$!\-]'/><br/>
 		
 		<label>이메일</label>
 		<input type='email' name='email' size='35' /><br/>
 		
 		<label>연락처</label>
-		<input type='text' name='phone' size='15' /><br/>
+		<input type='text' name='phone' size='15' pattern='\d{2,3} - \d{3,4} - \d{4}'/><br/>
 		
 		<label>우편번호</label>
 		<input type='text' name='zipcode' size='6'  required />
