@@ -1749,3 +1749,42 @@ return factory;
 
 }
 ```
+
+- SqlSessionFactory 생성 테스트
+정의된 config.xml 과 BoardFactory에 의해서 정상적으로 SqlSessionFactory가 생성되어 필요한 곳에서 사용될 수 있는지 간단한 jsp 코드를 사용하여 테스트해 보자.
+WebContent/begin/factory_test.jsp
+```jsp
+<%@page import="begin.BeginFactory"%>
+<%@page import="org.apache.ibatis.session.SqlSession"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+// Factory 생성 테스트
+// properties로 연결된 config 테스트
+
+SqlSession sqlSession = null;
+
+try{
+sqlSession = BeginFactory.getFactory().openSession();
+
+if(sqlSession == null){
+out.print("SqlSession 생성중 오류 발생...");
+}else{
+out.print("SqlSession이 정상적으로 생성되었습니다...");
+}
+sqlSession.close();
+}catch(Exception ex){
+out.print(ex.toString());
+}finally{
+
+}
+%>
+</body>
+</html>
