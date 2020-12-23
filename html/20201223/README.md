@@ -1657,3 +1657,18 @@ MyBatis
 - mybatis.pdf 가면 대충 설명잇다..
 <property name="username" value="system"/>
 <property name="password" value="oracle"/>
+
+- Mapper 경로 지정 방법
+mybatis는 자동으로 리소스를 찾는 방법을 제공하지 않는다.
+클래스 패스에 상대적으로 리소스를 지정할 수 도 있고 , url을 통해서 지정할 수 도 있다.
+기본 클래스 패스 위치 : WEB-INF/classes or /src
+<mappers>
+ <!--WEB-INF/classes안에있는경우-->
+ <mapper resource="member.xml"/>
+ <!--src/board안에있는경우-->
+ <mapper resource="board/board.xml"/>
+ <!--특정패키지안에있는경우-->
+ <mapper resource="kr/jobtc/myResource/geustbook.xml"/>
+ <!--특정디렉토리안에있는경우-->
+ <mapper url="file:///a/b/c/member.xml"/>
+</mappers>
