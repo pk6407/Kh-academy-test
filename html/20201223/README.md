@@ -1672,3 +1672,45 @@ mybatis는 자동으로 리소스를 찾는 방법을 제공하지 않는다.
  <!--특정디렉토리안에있는경우-->
  <mapper url="file:///a/b/c/member.xml"/>
 </mappers>
+
+- 프로퍼티 파일 사용하여 설정
+config.xml 파일을 작성할 때 Database 연결과 관련한 정보를 별도의 프로퍼티파일을 작성하여 사용해보자.
+step 1. 외부 프로터피 파일을 작성한다.
+config.properties
+driver = oracle.jdbc.driver.OracleDriver
+url = jdbc:oracle:thin:@127.0.0.1:1521:xe
+username = hr
+password = HR
+step 2. 외부 프로퍼티 파일 정보를 <properties/>를 사용하여 정의한다.
+step 3.
+프로퍼티로 적용할 부분을 ${프로퍼티명}으로 수정한다.
+WEB-INF/classes/config.xml
+1. <?xml version="1.0" encoding="UTF-8" ?>
+2. <!DOCTYPE configuration
+3. PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+4. "http://mybatis.org/dtd/mybatis-3-config.dtd">
+5.
+6. <configuration>
+7.
+8. <properties resource="config.properties"/>
+9.
+10.
+11. <environments default="development">
+12. <environment id="development">
+13. <transactionManager type="JDBC"/>
+14. <dataSource type="POOLED">
+15. <property name="driver" value="${driver}"/>
+16. <property name="url" value="${url}"/>
+17. <property name="username" value="${username}"/>
+18. <property name="password" value="${password}"/>
+19. </dataSource>
+20. </environment>
+21. </environments>
+22.
+23. <mappers>
+24. <mapper resource="member.xml"></mapper>
+25. <mapper resource="board/board.xml"></mapper>
+26. </mappers>
+27.
+28. </configuration>
+    
