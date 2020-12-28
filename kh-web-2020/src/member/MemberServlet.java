@@ -32,6 +32,7 @@ public class MemberServlet extends HttpServlet{
 		
 		int nowPage = 1;
 		String findStr = "";
+		String msg = "";
 		
 		RequestDispatcher rd = null;
 		dao = new MemberDao();
@@ -63,7 +64,7 @@ public class MemberServlet extends HttpServlet{
 			FileUpload fu = new FileUpload(req);
 			vo = fu.getMember();
 			page = fu.getPage();
-			String msg = dao.insert(vo);
+			msg = dao.insert(vo);
 			
 			req.setAttribute("msg", msg);
 			req.setAttribute("page", page);
@@ -71,7 +72,6 @@ public class MemberServlet extends HttpServlet{
 			rd.forward(req, resp);
 			
 			break;
-			
 			
 		case "view":
 			String mid = req.getParameter("mid");
@@ -124,8 +124,8 @@ public class MemberServlet extends HttpServlet{
 			
 			break;
 		}
+		
 	
 	}
 
 }
-

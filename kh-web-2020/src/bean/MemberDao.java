@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+//import com.oreilly.servlet.multipart.ExceededSizeException;
+
 import member.FileUpload;
 
 public class MemberDao {
@@ -141,13 +143,11 @@ public class MemberDao {
 			return msg;
 		}
 	}
-	
-	
 	public String update(MemberVo vo){
 		String msg = "회원 정보가 정상적으로 수정되었습니다.";
 		try {
-			String sql = "update members set"
-					   + "name =?, email=?, zipcode=?, address=?, phone=? ";
+			String sql = " update members set "
+					   + " name = ?, email=?, zipcode=?, address=?, phone=? ";
 			if(vo.getPhoto() != null && !vo.getPhoto().equals("")) {
 				sql += ", photo= '" + vo.getPhoto() + "'";
 			}
@@ -244,5 +244,5 @@ public class MemberDao {
 			e.printStackTrace();
 		}
 	}
- 
+
 }
