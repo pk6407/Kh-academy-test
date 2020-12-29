@@ -17,7 +17,7 @@ var member = function(){
 	var btnModify = getID('btnModify');
 	var btnUpdate = getID('btnUpdate');
 	var btnDelete = getID('btnDelete');
-	
+	 
 	if(btnDelete != null){
 		btnDelete.onclick = function(){
 			var frm = document.frm_member;
@@ -39,29 +39,32 @@ var member = function(){
 	if(btnUpdate != null){
 		btnUpdate.onclick = function(){
 			var frm = document.frm_member;
-			
-			/*암호와 암호확인의일치여부
-			var pwd = prompt("회원정보를 수정하사갰습니까?");
+
+			//암호와 암호확인의 일치여부
+			/*
+			var pwd = prompt("회원정보를 수정하시려면 암호를 입력하세요");
 			if(pwd == null){
 				return;
 			}
 			frm.pwd.value = pwd;
 			*/
-			var win = window.open('./member/input_pwd.jsp','win', 'width=400px, height=100px, left=300px, top=300px');			
+			
+			var win = window.open('./member/input_pwd.jsp', 'win', 'width=400px, height=100px, left=300px, top=300px');
 			win.onbeforeunload = function(){
 				if(frm.pwd.value != ''){
-					frm.enctype = 'multipart/form-data'; //파일을 업로드
+					frm.enctype = 'multipart/form-data';
 					frm.action = 'member.do?job=update'; //수정된 정보를 저장
 					frm.submit();
+				}
 			}
 		}
-	}	
-}
+	}
+	
 	if(btnModify != null){
 		btnModify.onclick = function(){
 			var frm = document.frm_member;
 			frm.mid.disabled=false;
-			frm.action = 'member.do?job=modify'; //수정화면이동
+			frm.action = 'member.do?job=modify';//수정화면이동
 			frm.submit();
 		}
 	}
@@ -107,9 +110,9 @@ var member = function(){
 			var frm = document.frm_member;
 			var checkFlag=true;
 			
-			/*example(html 태그에 pattern속성 미사용시)
-			var reg_mid = /[\w!$\-]{4,10}/;			
-			if(!reg_mid.test(frm.mid.value) ){
+			/* example(html 태그에 pattern속성 미 사용시)
+			var reg_mid = /[\w!$\-]{4,10}/;
+			if( !reg_mid.test(frm.mid.value) ){
 				alert('mid');
 				checkFlag=false;
 			}
@@ -137,10 +140,11 @@ var member = function(){
 				alert('암호를 확인해 주소~');
 				return;
 			}
-			
-			frm.enctype = 'multipart/form-data';
-			frm.action = 'member.do?job=insert';
-			frm.submit();
+			if(checkFlag){
+				frm.enctype = 'multipart/form-data';
+				frm.action = 'member.do?job=insert';
+				frm.submit();
+			}
 		}
 	}
 	
@@ -186,3 +190,24 @@ function view(mid){
 	frm.mid.value = mid;
 	frm.submit();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
