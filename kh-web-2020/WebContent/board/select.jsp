@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>게시판</title>
 <link rel='stylesheet' type='text/css' href='./css/board.css'>
+
 <script src='./js/board.js'></script>
 </head>
 <body>
@@ -14,11 +15,11 @@
 	<h2 class='title_main'>게시판</h2>
 	<form name='frm_board' method='post'>
 		<input type='button' id='btnInsert' value='입력'>
-		<div>
+		<input type='text' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage } ' />
+		<input type='text' name='serial' value='0'/>
+		<div class='find'>
 			<input type='text' name='findStr' id='findStr' value='${param.findStr }'>
 			<input type='button' name='btnFind' id='btnFind' value='조회'/>
-			<input type='text' name='nowPage' value='${(empty param.nowPage)? 1 : param.nowPage } ' />
-			<input type='text' name='serial' value='0'/>
 		</div>
 	</form>
 
@@ -32,11 +33,11 @@
 	<div class='items'>
 		<c:forEach var='vo' begin='1' end='12'>
 			<div class='item' onclick="view(${vo})">
-				<span class='no'>NO${vo}</span>
+				<span class='no'>${vo}</span>
 				<span class='subject'>제목(10)</span>
-				<span class='mid'>작성자</span>
-				<span class='mdate'>작성일</span>
-				<span class='hit'>조회수</span>
+				<span class='mid'>Park Wyan gi</span>
+				<span class='mdate'>2020-12-30</span>
+				<span class='hit'>999,999</span>
 			</div>					
 		</c:forEach>
 	</div>	
