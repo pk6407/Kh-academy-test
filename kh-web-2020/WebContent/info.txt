@@ -1,0 +1,105 @@
+-- 프로젝트와 관련한 테이블 생성 및 시퀀스
+
+create table members(
+  mid varchar(20),
+  pwd varchar(20),
+  name varchar(20),
+  email varchar(50),
+  phone varchar(20),
+  zipcode varchar(10),
+  address varchar(100),
+  photo varchar(50),
+  mdate varchar(20)
+);
+
+create table board(
+  serial integer,
+  mid varchar(20),
+  pwd varchar(20),
+  subject varchar(100),
+  doc varchar(3000),
+  mdate varchar(20),
+  hit integer,
+  pserial integer
+);
+
+
+create table boardAtt(
+  serial integer,
+  pserial integer,
+  oriFile varchar(100),
+  sysFile varchar(100)
+);
+
+create table guestbook(
+  serial integer,
+  mid varchar(20),
+  pwd varchar(20),
+  doc varchar(3000),
+  mdate varchar(20)
+);
+
+
+create sequence seq_board;
+create sequence seq_boardAtt;
+create sequence seq_guestbook;
+
+
+-- sample data 
+declare 
+BEGIN
+   for i in 1..100 loop
+      insert into board(serial, subject, doc, mid, pwd, mdate)
+      values(seq_board.nextval, 'hi...', 'ho....', 'kim', '1111', sysdate);
+   
+   end loop;
+end;
+
+
+/*댓글 */
+insert into board(serial, subject, doc, mid, pwd, mdate, pserial)
+values(seq_board.nextval, 'rep hi...', 'rep ho....', 'park', '1111', sysdate, 100);
+
+insert into board(serial, subject, doc, mid, pwd, mdate, pserial)
+values(seq_board.nextval, 'r-rep hi...', 'r-rep ho....', 'park', '1111', sysdate, 101);
+
+/*첨부 */
+insert into boardAtt(serial, pserial, orifile, sysfile)
+values( seq_boardAtt.nextval, 100, 'a.png', 'a.png');
+
+commit;
+
+/* insert all 시 시컨스 증가 함수 */
+create or replace function getBoardSeq
+return number
+is
+  seq number;
+begin
+  select seq_board.nextval into seq from dual;
+  return seq;
+end;
+
+
+create or replace function getBoardAttSeq
+return number
+is
+  seq number;
+begin
+  select seq_boardatt.nextval into seq from dual;
+  return seq;
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

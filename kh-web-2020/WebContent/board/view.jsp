@@ -14,20 +14,20 @@
 	<h2 class='title_main'>게시판</h2>
 	<form name='frm_board' method='post'>
 		<label>아이디</label>
-		<input type='text' name='mid' disabled /><br/>
+		<input type='text' name='mid' disabled value='${vo.mid }'/><br/>
 		
 		<label>제목</label>
-		<input type='text' name='subject' disabled /><br/>
+		<input type='text' name='subject' disabled value='${vo.subject }' /><br/>
 		
 		<label></label>
-		<textarea name='doc' rows='7' cols='80' disabled></textarea><br/>
+		<textarea name='doc' rows='7' cols='80' disabled>${vo.doc }</textarea><br/>
 		
 		<label>첨부</label>
 		<div id='attach_zone'>
-			<img src='http://placehold.it/120x100' />
-			<img src='http://placehold.it/120x100' />
-			<img src='http://placehold.it/120x100' />
-			<img src='http://placehold.it/120x100' />
+			<c:forEach items="${vo.attList }" var="att">
+				<img src='./upload/${att.sysFile }' width='120px' height='100px'/>
+			</c:forEach>
+		
 		</div>
 	
 		<div class='btns'>
@@ -37,9 +37,10 @@
 			<input type='button' value='목록' id='btnSelect' />
 		</div>
 		
-		<input type='text' name='findStr' value='${param.findStr }'/>
-		<input type='text' name='nowPage' value='${param.nowPage }'/>
-		<input type='text' name='serial' value='${param.serial }'/>
+		<input type='hidden' name='findStr' value='${param.findStr }'/>
+		<input type='hidden' name='nowPage' value='${param.nowPage }'/>
+		<input type='hidden' name='serial'  value='${param.serial }'/>
+		<input type='hidden' name='pwd' />
 	</form>
 </div>
 

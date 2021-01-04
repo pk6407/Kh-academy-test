@@ -77,4 +77,3 @@ function imagePreView(zone, ev){
 		}
 	}
 }
-

@@ -11,8 +11,7 @@
 					<li><a href = 'index.jsp?inc=./guestbook/select.jsp'>방명록</a></li>
 					
 					<li><a href = 'member.do?job=select'>회원관리</a></li>
-					
-					<li>게시판</li>
+					<li><a href = 'index.jsp?inc=./board/select.jsp'>게시판</a></li>
 				</ul>
 			</nav>
 		</header>

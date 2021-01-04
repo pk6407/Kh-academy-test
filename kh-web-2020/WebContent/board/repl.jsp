@@ -8,6 +8,7 @@
 <title>게시판</title>
 <link rel='stylesheet' type='text/css' href='./css/board.css'>
 <script src='./js/board.js'></script>
+<script src='./js/file_upload.js'></script>
 </head>
 <body>
 <div id='board'>
@@ -26,26 +27,24 @@
 		<input type='password' name='pwd' placeholder='영숫자와 !$-_ 만 가능' /><br/>
 		
 		<label>첨부</label>
-		<div id='attach_zone'>
-			<img src='http://placehold.it/120x100' />
-			<img src='http://placehold.it/120x100' />
-			<img src='http://placehold.it/120x100' />
-			<img src='http://placehold.it/120x100' />
-		</div>
+		<div id='attach_zone'></div>
 	
 		<div class='btns'>
 			<input type='button' value='댓글저장' id='btnReplSave' />
 			<input type='button' value='목록' id='btnSelect' />
 		</div>
 		
-		<input type='text' name='frndStr' value='${param.findStr }'/>
-		<input type='text' name='nowPage' value='${ param.nowPage}'/>
-		<input type='text' name='serial' value='${param.serial }'/>
+		<input type='hidden' name='findStr' value='${param.findStr }'/>
+		<input type='hidden' name='nowPage' value='${param.nowPage }'/>
+		<input type='hidden' name='serial'  value='${param.serial }'/>
 		
 	</form>
 </div>
 
 
-<script>board()</script>
+<script>
+	board();
+	fileUpload('attach_zone');	
+</script>
 </body>
 </html>

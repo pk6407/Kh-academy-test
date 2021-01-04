@@ -15,19 +15,19 @@
 	<h2 class='title_main'>게시판</h2>
 	<form name='frm_board' method='post'>
 		<label>아이디</label>
-		<input type='text' name='mid' value='${sessionScope.mid }'
-		placeholder='영숫자와 !$-_ 만 가능' /><br/>
+		<input type='text' name='mid' value='${sessionScope.mid }' 
+		       placeholder='영숫자와 !$-_ 만 가능' /><br/>
 		
 		<label>제목</label>
 		<input type='text' name='subject' maxLength='200' /><br/>
 		
 		<label></label>
-		<textarea name='doc'></textarea><br/>
+		<textarea name='doc' te></textarea><br/>
 		
 		<label>암호</label>
 		<input type='password' name='pwd' placeholder='영숫자와 !$-_ 만 가능' /><br/>
 		
-		<label>첨부</label>
+		<label></label>
 		<div id='attach_zone'></div>
 	
 		<div class='btns'>
@@ -36,7 +36,7 @@
 		</div>
 		
 		<input type='hidden' name='findStr' value='${param.findStr }'/>
-		<input type='hidden' name='nowPage' value='${param.nowPage }'/>
+		<input type='hidden' name='nowPage' value='${param.nowPage }' />
 		
 	</form>
 </div>
@@ -44,7 +44,7 @@
 
 <script>
 	board()
-	fileUpload('attach_zone');
+	fileUpload('attach_zone');	
 </script>
 </body>
 </html>
