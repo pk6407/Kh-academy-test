@@ -1,5 +1,7 @@
 package board;
 
+import java.util.List;
+
 public class BoardVo {
 	
 	int serial;
@@ -9,8 +11,18 @@ public class BoardVo {
 	String doc;
 	String mdate;
 	int hit;
-	int pserial;
+	int pSerial;
 	
+	int attCnt;
+	List<BoardAttVo> attList;
+	List<BoardAttVo> delFiles;
+	
+	public int getAttCnt() {
+		return attCnt;
+	}
+	public void setAttCnt(int attCnt) {
+		this.attCnt = attCnt;
+	}
 	public int getSerial() {
 		return serial;
 	}
@@ -53,11 +65,25 @@ public class BoardVo {
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
-	public int getPserial() {
-		return pserial;
+
+	public int getpSerial() {
+		return pSerial;
 	}
-	public void setPserial(int pserial) {
-		this.pserial = pserial;
+	public void setpSerial(int pSerial) {
+		this.pSerial = pSerial;
 	}
+	public List<BoardAttVo> getAttList() {
+		return attList;
+	}
+	public void setAttList(List<BoardAttVo> attList) {
+		this.attList = attList;
+	}
+	public List<BoardAttVo> getDelFiles() {
+		return delFiles;
+	}
+	public void setDelFiles(List<BoardAttVo> delFiles) {
+		this.delFiles = delFiles;
+	}
+	
 	
 }
