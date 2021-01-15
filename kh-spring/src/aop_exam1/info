@@ -1,0 +1,9 @@
+aop example
+
+- interface Dao (void seletc())
+- dao를 구현한 클래스 : BoardDao, MemberDao, SaleDao
+- Advice : 로그인 된 상태라면 mid변수에 임의의 값이 저장되어 있고, 로그인 되지 않았다면 null 값이 대입되어 있다고
+	가정하고, dao의 select 메서드를 실행하기전에 로그인 여부를 체크하여
+	로그인 된 상태라면 "select ok..."를, 로그인 되지 않았다면 "로그인 필요" 문자를 출력하시오.
+	
+* 모든 dao의 select()메서드가 실행되기전 로그인 여부를 판단하여 적당한 실행결과를 출력.
