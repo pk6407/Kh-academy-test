@@ -1,0 +1,12 @@
+Spring aop 응용 예(aop_exam2)
+
+1)생산제품을 처리하는 Dao의 interface Product작성
+  - 메서드는 CRUD를 처리하는 메서드
+2)Product를 구현한 TVProduct,RadioProduct,SmartTVProduct클래스 작성
+
+3)AdviceProduct 클래스를 사용하여 CRUD 처리시 현재시간을 로그로 화면에 출력하도록 advice 클래스 작성
+  - around타입으로
+
+4)aop_exam2.xml에서 spring aop설정
+
+5)Main 클래스에서 실행.
