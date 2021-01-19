@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+   xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xmlns:aop = "http://www.springframework.org/schema/aop"
+   
+   xsi:schemaLocation="
+      http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd
+      
+      http://www.springframework.org/schema/aop
+      http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+      
+      ">
+      
+      <bean id="bDao" class="aop_aspect.BoardDao"/>
+      <bean id="mDao" class="aop_aspect.MemberDao"/>
+      <bean id="sDao" class="aop_aspect.SaleDao"/>
+       
+      <bean id='advice' class='aop_aspect.Advice'/>	
+      
+      <!-- aspectj aop -->
+      <aop:config>
+      	<aop:aspect id="aspect" ref='advice'>
+      		<aop:pointcut id="pointcut" 
+      			expression="execution(* select(..))"/>
+      		<aop:before method="loginCheck" pointcut-ref="pointcut"/>	
+      	</aop:aspect>
+      
+      	<aop:aspect id='around' ref='advice'>
+      		<aop:pointcut expression="execution(* insert(..))" id="aroundPointcut"/>
+      		<aop:around method="around" pointcut-ref="aroundPointcut"/>
+      	
+      	</aop:aspect>
+      </aop:config>
+</beans>

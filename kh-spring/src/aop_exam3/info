@@ -1,0 +1,10 @@
+---------------------------------------------
+Spring aspectj library를 사용한 AOP 응용
+---------------------------------------------
+1) interface Product를 구현하여 TVProduct, RadioProduct, SmartTVProduct 클래스를 작성
+2) AfterAdvice 클래스에서는 Product의 select 메서드가 실행되면 after로 형태로 로그를 출력
+3) BeforeAdvice 클래스에서는 Product의 insert, update, delete가 실행될때 사전에 로그인 체크를 하여
+ 로그인된 경우만 프로세스를 실행하도록 advice를 작성하시오.
+4) Main 클래스를 사용하여 전체 테스트 진행.
+
+
