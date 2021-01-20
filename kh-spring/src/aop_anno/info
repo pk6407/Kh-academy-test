@@ -1,0 +1,11 @@
+---------------------------------------------
+Spring aspectj library를 사용한 AOP annotaion 작업
+---------------------------------------------
+>aop_exam3에 작성된 코드를 재사용하고 필요한 부분만 수정
+>xml 코드에 annotaion을 사용할 수 있는 코드 추가
+
+<aop:aspectj-autoproxy proxy-target-class='true'/>
+
+> aspectj에서 필요한 <aop:config/>와 관련된 코드가 모두 제거되고 아래의 코드가 추가된다.
+
+<context:annotaion-config/>
