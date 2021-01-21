@@ -12,6 +12,9 @@
 	<hr/>
 	
 	<a href='test.ddd'>Spring MVC Test</a>
+	<a href='gugudan.ddd'>Spring MVC를 사용한 구구단</a>
+	<a href='sum.ddd'>두수의 합</a>
+	<a href='insert.mem'>회원가입</a>
 </div>
 </body>
 </html>

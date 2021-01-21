@@ -12,5 +12,17 @@
 		<url-pattern>*.ddd</url-pattern>
 	</servlet-mapping>
 
+	<!-- member -->
+	<servlet>
+		<servlet-name>member</servlet-name>
+		<servlet-class>
+		org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>	
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>member</servlet-name>
+		<url-pattern>*.mem</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

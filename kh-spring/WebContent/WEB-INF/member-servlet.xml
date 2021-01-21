@@ -17,9 +17,14 @@
       
 	<context:annotation-config />
 	
-	<bean id='hello' class='mvc.Hello' />
+	<bean id='mDao' class='member.MemberDao'/>
+	<bean id='mController' class='member.MemberController' >
+		<constructor-arg ref="mDao"/>
+	</bean>
+	
+	
 	<bean class='org.springframework.web.servlet.view.InternalResourceViewResolver'>
-		<property name='prefix' value='/WEB-INF/test/' />
+		<property name='prefix' value='/WEB-INF/member/' />
 		<property name='suffix' value='.jsp' />
 	</bean>
 
