@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+#member{
+	width:1000px;
+	margin:5px auto;
+}
+
+#btnZone{
+	border-top: 1px solid #aaa;
+	padding-top : 10px;
+	text-align: center;
+}
+#btnZone>input[type=button]{
+	border-radius: 14px;
+	border:1px solid #aaa;
+}
+
+
+/* select ---------------------------*/
+#findZone{
+	height:60px;
+}
+#findZone>form{
+	position: relative;
+}
+
+#findZone>form > div{
+	display:inline-block;
+	position: absolute;
+	right:0;
+}
+
+#listItems{
+	text-align: center;
+}
+
+#listItems .item{
+	width: 300px;
+	display: inline-block;
+	margin-bottom:10px;
+	text-align: left;
+	font-size:10pt;
+}

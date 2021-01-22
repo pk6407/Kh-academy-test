@@ -17,7 +17,11 @@
       
 	<context:annotation-config />
 	
-	<bean id='mDao' class='member.MemberDao'/>
+	<bean id='myda' class='bean.MemberFactory' />
+	<bean id='mDao' class='member.MemberDao'>
+		<constructor-arg ref='myba'/>
+	</bean>
+	
 	<bean id='mController' class='member.MemberController' >
 		<constructor-arg ref="mDao"/>
 	</bean>

@@ -15,6 +15,7 @@
 	<a href='gugudan.ddd'>Spring MVC를 사용한 구구단</a>
 	<a href='sum.ddd'>두수의 합</a>
 	<a href='insert.mem'>회원가입</a>
+	<a href='select.mem'>회원조회</a>
 </div>
 </body>
 </html>
