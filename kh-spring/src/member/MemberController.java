@@ -1,5 +1,7 @@
 package member;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,6 +40,14 @@ public class MemberController {
 		
 		return mv;
 	
+	}
+	@RequestMapping(value="select.mem", method=RequestMethod.GET)
+	public ModelAndView select(Page page) {
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("select");//WEB-INF/member/insert_result.jsp
+		
+		return mv;
 		
 	}
 }

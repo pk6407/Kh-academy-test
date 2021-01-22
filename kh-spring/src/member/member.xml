@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+
+	<!-- 테이블의 컬럼명과 vo 객체의 필드명이 서로 다른경우 -->
+	<!-- column : 테이블의 컬럼명, property : vo의필드명 -->
+	<resultMap type="mVo" id="m_vo">
+		<result column="m_id" property="mId"/>
+		<result column="m_name" property="mName"/>
+	</resultMap>
+
+	<!-- resultMap  -->
+	<!--  <select id="temp_select" parameterType="page" resultMap="m_vo">
+	table의 칼럼명과 java의 field명이 서로 다른경우, 자동화
+	</select>	-->
+	<!-- typeAliases -->
+	<select id="select" parameterType="page" resultType="mVo">
+	
+	</select>
+
+
+</mapper>   
