@@ -9,6 +9,7 @@
 		<typeAlias type="member.Page" alias="page"/>
 		<typeAlias type="member.MemberVo" alias="mVo"/>
 	</typeAliases>
+
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC"/>
