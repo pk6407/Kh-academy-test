@@ -2,34 +2,34 @@
 <beans
    xmlns="http://www.springframework.org/schema/beans"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xmlns:context = "http://www.springframework.org/schema/context"
-   xmlns:aop = "http://www.springframework.org/schema/aop"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:aop="http://www.springframework.org/schema/aop"
+   
    xsi:schemaLocation="
-      http://www.springframework.org/schema/beans
-      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-      
-      http://www.springframework.org/schema/context
-      http://www.springframework.org/schema/context/spring-context-4.0.xsd
-      
-      http://www.springframework.org/schema/aop
-      http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
-      ">
-      
-	<context:annotation-config />
-	
-	<bean id='myda' class='bean.MemberFactory' />
-	<bean id='mDao' class='member.MemberDao'>
-		<constructor-arg ref='myba'/>
-	</bean>
-	
-	<bean id='mController' class='member.MemberController' >
-		<constructor-arg ref="mDao"/>
-	</bean>
-	
-	
-	<bean class='org.springframework.web.servlet.view.InternalResourceViewResolver'>
-		<property name='prefix' value='/WEB-INF/member/' />
-		<property name='suffix' value='.jsp' />
-	</bean>
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+         
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-4.0.xsd
+         
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+         
+         ">
+          
+   <context:annotation-config/>
+   
+   <bean id="myba" class="bean.MemberFactory"/>
+   <bean id='mDao' class="member.MemberDao">
+      <constructor-arg ref="myba"/>
+   </bean>
+   <bean id='mController' class='member.MemberController'>
+      <constructor-arg ref="mDao"/>
+   </bean>
+   
+   <bean class='org.springframework.web.servlet.view.InternalResourceViewResolver'>
+      <property name='prefix' value='/WEB-INF/member/'  />
+      <property name='suffix' value='.jsp' />
+   </bean>
 
 </beans>
