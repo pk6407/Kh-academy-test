@@ -4,60 +4,67 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace='member'>
+<mapper namespace="member">
 
-	<!-- 테이블의 컬럼명과 vo 객체의 필드명이 서로 다른경우 -->
-	<!-- column : 테이블의 컬럼명, property : vo의필드명 -->
-	<resultMap type='mVo' id='m_vo'>
-		<result column='m_id' property='mId'/>
-		<result column='m_name' property='mName'/>
-	</resultMap>
+   <!-- 테이블의 컬러명과 vo 객체의 필드명이 서로 다른 경우  -->
+   <!-- column : 테이블의 컬럼명, property : vodml 필드명  -->
+   <resultMap type="mVo" id="m_vo">
+      <result column="m_id" property="mId"/>
+      <result column="m_name" property="mName"/>
+   </resultMap>
 
-	
-	<select id='temp_select' parameterType='page' resultMap='m_vo'>
-	
-	</select>
-	
-	<select id='tot_list_size' parameterType='String' resultType='Integer'>
-		select count(mid) cnt from members 
-		where mid like '%${_parameter}%' or email like '%${_parameter}%' 
-		or phone like '%${_parameter}%'  or address like '%${_parameter}%'
-	</select>
-	
-	
-	<select id='select' parameterType='page' resultType='mVo'>
-		select * from (
-		select rownum no, m.* from (
-		select * from members
-		where mid like '%${findStr}%' or email like '%${findStr}%' 
-		or phone like '%${findStr}%' or address like '%${findStr}%'
-		order by name asc) m
-		) where no between #{startNo} and #{endNo}
-	</select>
-
-	<insert id='insert' parameterType='mVo'>
-		insert into members(mid, pwd, name, email, phone, zipcode, address, photo, mdate)
-		values(#{mid}, #{pwd}, #{name}, #{email}, #{phone}, #{zipcode}, #{address}, #{photo}, sysdate )
-	</insert>
-
-	<update id='update' parameterType='mVo'>
-		update members set 
-		name = #{name}, email=#{email}, zipcode=#{zipcode}, address=#{address}, phone=#{phone}
-	
-	<if test="#{photo} != null">
-		,photo= #{photo}
-	</if>
-	
-		where mid=#{mid} and pwd=#{pwd}
-	
-	</update>
-
-	<delete id='delete' parameterType='mVo'>
-		delete from members where mid=#{mid} and pwd=#{pwd}
-	</delete>
-	
-	<select id='view' parameterType='String' resultType='mVo'>
-		select * from members where mid=#{_parameter}
-	</select>
-	
-</mapper>   
+   <select id="temp_select" parameterType="page" resultMap="m_vo">
+   
+   </select>
+   
+   <select id="tot_list_size" parameterType="page" resultType="Integer">
+      select count(mid) cnt from members
+      <where> 
+      	<foreach collection='findStrList' item='v' open='(' close=')' separator='or'>
+      		mid like '%${v}%' or email like '%${v}%' 
+      		or phone like '%${v}%' or address like '%${v}%'
+   	  	</foreach>
+   	  </where>
+   </select>
+   
+   <!-- config.xml에서 typeAliases로 별칭을 등록해서 패키지명,클래스명을 단순화 시킬 수 있다.  -->
+   <!--<select id="select" parameterType="member.Page" resultType="member.MemberVo">-->
+   <select id="select" parameterType="page" resultType="mVo">
+       select * from (
+        select rownum no, m.* from (
+           select * from members 
+           <where> 
+      	<foreach collection='findStrList' item='v' open='(' close=')' separator='or'>
+     		mid like '%${v}%' or email like '%${v}%' 
+      		or phone like '%${v}%' or address like '%${v}%'
+   	  	</foreach>
+   	  </where> 
+           order by name asc) m 
+        ) where no between #{startNo} and #{endNo}
+   </select>
+   
+   <insert id="insert" parameterType="mVo">
+      insert into members(mid, pwd, name, email, phone, zipcode, address, photo, mdate)
+      values(#{mid}, #{pwd}, #{name}, #{email}, #{phone}, #{zipcode}, #{address}, #{photo}, sysdate )
+   </insert>
+   
+   <update id="update" parameterType="mVo">
+      update members set
+      name=#{name}, email=#{email}, zipcode=#{zipcode}, address=#{address}, phone=#{phone}   
+      <if test="#{photo} != null">
+         , photo= #{photo}
+      </if>
+      where mid=#{mid} and pwd=#{pwd}
+   </update>
+   
+   <delete id="delete" parameterType="mVo">
+      delete from members where mid=#{mid} and pwd=#{pwd}
+   </delete>
+   
+   <select id="view" parameterType="String" resultType="mVo">
+      select * from members where mid=#{_parameter}
+   </select>
+   
+   
+   
+</mapper> 

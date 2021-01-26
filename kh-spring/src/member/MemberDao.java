@@ -1,6 +1,8 @@
 package member;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -27,12 +29,34 @@ public class MemberDao implements Dao{
 	}
 
 	@Override
-	public List<MemberVo> select(Page p) {
+	public Map<String,Object> select(Page p) {
+		Map<String,Object> map = new HashMap<String,Object>();
+		if(p==null) {
+			p = new Page();
+			p.setNowPage(1);
+		}else if(p.getNowPage()<1){
+			p.setNowPage(1);
+		}
+		
+		
+		System.out.println("Dao.select()..................");
+		System.out.println("nowPage : " + p.getNowPage()); 
+		
+		int cnt = sqlSession.selectOne("member.tot_list_size",p);
+		p.setTotListSize(cnt);
+		p.pageCompute();
+		
+		System.out.println("startNo : " + p.getStartPage()); 
+		System.out.println("endNo : " +p.getEndPage()); 
+		
 		List<MemberVo> list = sqlSession.selectList("member.select",p);
 		
+		System.out.println("list.size : " + list.size());
 		
+		map.put("list", list);
+		map.put("page", p);
 		
-		return null;
+		return map;
 	}
 
 	@Override

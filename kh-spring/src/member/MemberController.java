@@ -1,6 +1,7 @@
 package member;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,12 +42,26 @@ public class MemberController {
 		return mv;
 	
 	}
-	@RequestMapping(value="select.mem", method=RequestMethod.GET)
+	
+	@RequestMapping(value="select.mem", method= {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView select(Page page) {
 		ModelAndView mv = new ModelAndView();
+		List<MemberVo> list = null;
 		
+		if(page != null) {
+			System.out.println("controller.select()..............");
+			System.out.println("nowPage : " + page.getNowPage());
+		}else {
+			System.out.println("page is null");
+		}
+				
+		Map<String,Object> map= dao.select(page);
+		page = (Page)map.get("page");
+		list = (List<MemberVo>)map.get("list");
+		
+		mv.addObject("page", page);
+		mv.addObject("list", list);
 		mv.setViewName("select");//WEB-INF/member/insert_result.jsp
-		
 		return mv;
 		
 	}
