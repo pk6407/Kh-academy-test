@@ -101,6 +101,7 @@
           var frm = document.frm_member;
           var checkFlag =true;
           
+          /*
           if(!frm.mid.checkValidity()){
              alert('mid');
              checkFlag=false;
@@ -123,11 +124,11 @@
              alert("암호를 확인하세요");
              return;
           }
-          
+          */
           //파일 업로드를 위해선 반드시 저 코드를 사용해야하는데 사용시 request.getParameter()를 통해서 form에 있는 데이터를 처리할 수 없기에          
           //cos.jar lib 다운받아서 사용해야만 아래 코드가 작동한다. <1222 스샷필기 확인>
           if(checkFlag){
-             frm.enctype = 'multipart/form-data';
+            frm.enctype = 'multipart/form-data';
             frm.action = 'insertR.mem';
             frm.submit();
           
