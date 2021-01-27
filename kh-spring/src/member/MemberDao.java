@@ -10,9 +10,10 @@ import bean.MemberFactory;
 
 public class MemberDao implements Dao{
 	SqlSession sqlSession;
-
+	MemberFactory f;
 	public MemberDao() {}
 	public MemberDao(MemberFactory f) {
+		this.f = f;
 		sqlSession = f.getFactory().openSession();
 	}
 	
@@ -56,6 +57,8 @@ public class MemberDao implements Dao{
 		map.put("list", list);
 		map.put("page", p);
 		
+		sqlSession.close();
+		
 		return map;
 	}
 
@@ -79,8 +82,16 @@ public class MemberDao implements Dao{
 
 	@Override
 	public MemberVo view(String mid) {
-		// TODO Auto-generated method stub
-		return null;
+		sqlSession = f.getFactory().openSession();
+		
+		System.out.println("Dao.view()..." + mid);
+		
+		MemberVo vo =sqlSession.selectOne("member.view",mid);
+		
+		System.out.println(vo.getName());
+		
+		sqlSession.close();
+		return vo;
 	}
 
 }
