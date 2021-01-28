@@ -50,8 +50,8 @@
 			<input type='button' value='저장' id='btnSave' />
 			<input type='button' value='목록으로' id='btnSelect' />
 			
-			<input type='hidden' name='findStr' value='${param.findStr }' />
-			<input type='hidden' name='nowPage' value='${param.nowPage }' />
+			<input type='text' name='findStr' value='${param.findStr }' />
+			<input type='text' name='nowPage' value='${param.nowPage }' />
 			
 		</div>
 	</form>

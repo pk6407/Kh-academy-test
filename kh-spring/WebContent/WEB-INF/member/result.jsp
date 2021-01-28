@@ -7,13 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<div id='sum_result'>
-	<h2>두 수 합</h2>
-	${a } + ${b } = ${r }
+<div id='member'>
+	<h2>처리결과</h2>
+	${msg }
 </div>
-
-
-
 </body>
 </html>

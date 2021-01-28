@@ -12,11 +12,11 @@
 }
 #btnZone>input[type=button]{
 	border-radius: 14px;
-	border:1px solid #aaa;
+	border:1px solid #aaa;	
 }
 
 
-/* select ---------------------------*/
+/* select ---------------------- */
 #findZone{
 	height:60px;
 }
@@ -41,3 +41,35 @@
 	text-align: left;
 	font-size:10pt;
 }
+
+#listItems .item>img{
+	width: 150px;
+	height:200px;	
+}	
+
+/*--암호 입력 처리 ----------------------- */
+#member #password_zone{
+	display:none;
+	z-index: 1;
+	position: fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0, 0.4);
+}
+
+#member #password_zone>div{
+	width:300px;
+	position: relative;
+	padding: 25px;
+	margin: 250px auto;
+	background-color: #fff;
+	text-align: center;
+	border-radius : 7px;
+}
+
+
+
+
+

@@ -35,15 +35,15 @@
 		
 			<c:choose>
 				<c:when test="${empty vo.photo }">
-				<img src='http://placehold.it/200X140' width='200px' height='140px' />
+					<img src='http://placehold.it/200X140' width='200px' height='140px' />
 				</c:when>
 				<c:otherwise>
-				<a href='./upload/${vo.photo }' download = '${vo.photo }'>
-				<img src='./upload/${vo.photo }' width='200px' height='140px' />
-				</a>
-			</c:otherwise>
-		</c:choose>
-		
+					<a href='./upload/${vo.photo }' download = '${vo.photo }'>
+						<img src='./upload/${vo.photo }' width='200px' height='140px'/>
+					</a>
+				</c:otherwise>				
+			</c:choose>		
+			
 		<hr/>
 		
 		<div class='btns'>
@@ -55,10 +55,26 @@
 		<input type='text' name='findStr' value='${param.findStr }'/>
 		<input type='text' name='nowPage' value='${param.nowPage }'/>
 		<input type='text' name='delFile' value='${vo.photo }' />
-		<input type='text' name='pwd' />
+		
+		<div id='password_zone'>
+			<div>
+				<input type='password' name='pwd' />
+				<input type='button' value='입력' id='btnPassword' />
+			</div>
+		</div>		
+		
+		
 	</form>
 
 </div>
 <script>member()</script>
 </body>
 </html>
+
+
+
+
+
+
+
+

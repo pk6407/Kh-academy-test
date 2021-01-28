@@ -1,3 +1,4 @@
+<%@page import="member.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,13 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<div id='sum_result'>
-	<h2>두 수 합</h2>
-	${a } + ${b } = ${r }
-</div>
-
+<%
+MemberVo vo = new MemberVo();
+String a = request.getParameter("mid");
+vo.setMid(a);
 
 
+%>
 </body>
 </html>
