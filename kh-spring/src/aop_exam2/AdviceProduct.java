@@ -10,8 +10,8 @@ public class AdviceProduct implements MethodInterceptor{
 
 	@Override
 	public Object invoke(MethodInvocation invocation) throws Throwable {
-		Object o = null;
-		System.out.println("----------------------------");
+		Object o=null;
+		System.out.println("-----------------------------------");
 		log();
 		o = invocation.proceed();
 		System.out.println(o);

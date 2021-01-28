@@ -1,7 +1,7 @@
 package aop_exam1;
 
-public class SaleDao implements Dao{
-	
+public class SaleDao implements Dao {
+
 	public SaleDao() {
 	}
 
@@ -9,4 +9,5 @@ public class SaleDao implements Dao{
 	public void select() {
 		System.out.println("SaleDao.select()");
 	}
+	
 }

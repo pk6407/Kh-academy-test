@@ -5,11 +5,11 @@ public class Advice implements LogIn{
 	public Advice(Dao dao) {
 		this.dao = dao;
 	}
-	
+
 	@Override
 	public boolean loginCheck() {
 		// 로그인 되어 있는 상태 mid="hong";
-		return true;
+		return false;
 	}
 	
 	public void before() { //Before Advice
