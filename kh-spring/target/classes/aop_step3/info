@@ -1,0 +1,13 @@
+spring aop library를 사용한 AOP 구현
+
+- mvnrepository.com에서 'spring aop'로 검색후 해당 dependency를
+  pom.xml 에 추가
+  
+
+- interface Dao 작성
+- MemberDao, BoardDao, SaleDao 작성
+- Advice : spring aop를 구현하는 클래스
+- Main : AOP 실행하는 클래스
+- aop_step3.xml :  AOP를 구현한 xml
+  
+  

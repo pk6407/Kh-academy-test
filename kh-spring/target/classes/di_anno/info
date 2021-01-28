@@ -1,0 +1,6 @@
+di_anno
+
+- 의존성 주입을 xml로 작업하지 않고 annotation으로 작업
+  1) byName
+  2) byType
+  3) autowired
