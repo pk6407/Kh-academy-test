@@ -10,7 +10,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class FileUpload {
 	// 학원
-	public static final String saveDir = "C:\\Users\\pc\\eclipse-workspace\\kh-spring\\WebContent\\upload\\";
+	public static final String saveDir = "C:\\Users\\user1\\git\\kh-spring\\kh-spring\\WebContent\\upload\\";
 	
 	//home
 	//public static final String saveDir = "C:/Users/jobtc/git/kh-web-2020/kh-web-2020/WebContent/upload/";

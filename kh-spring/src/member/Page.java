@@ -37,12 +37,12 @@ public class Page {
 		startPage = endPage-blockSize+1;
 		if(endPage>totPage) endPage = totPage;
 	}
+	
+	
 
-	
-	
 	public List<String> getFindStrList() {
 		if(findStr != null) {
-			String[] temp = findStr.split("");
+			String[] temp = findStr.split(" ");
 			findStrList.addAll(Arrays.asList(temp));
 		}
 		
@@ -127,4 +127,6 @@ public class Page {
 	public void setFindStr(String findStr) {
 		this.findStr = findStr;
 	}
+	
+	
 }
