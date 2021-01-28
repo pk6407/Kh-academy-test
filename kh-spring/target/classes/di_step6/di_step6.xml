@@ -8,9 +8,9 @@
 				http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
 		
-		<bean id='db' class='di_step5.MyDB' />
-		<bean id='dao' class='di_step5.MemberDao'>
-			<constructor-arg ref='db'/>
+		<bean id='db' class='di_step6.MyDB' />
+		<bean id='dao' class='di_step6.MemberDao'>
+			<property name="db" ref='db'/>
 		</bean>
 
 
