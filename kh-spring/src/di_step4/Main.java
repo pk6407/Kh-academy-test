@@ -19,13 +19,14 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Assembler ass = new Assembler();
-		DB db = ass.getDB();
+		DB db = ass.getDb();
 		Main m = new Main(db);
 		
 		m.method(db);
 		
 		
 		
+
 	}
 
 }

@@ -4,17 +4,17 @@ public class Main {
 
 	public Main() {
 		// 김씨
-		OracleDB db = new OracleDB();
+		DB db = new OracleDB();
 		System.out.println(db.select("kim"));
 		
-		// 박씨
-		Database db2 = new Database();
-		System.out.println(db2.select("park"));
+		//박씨
+		db = new Database();
+		System.out.println(db.select("park"));
 		
-		// 이씨
-		MyDB db3 = new MyDB();
-		System.out.println(db3.select("lee"));
-	
+		//이씨
+		db = new MyDB();
+		System.out.println(db.select("lee"));
+		
 	}
 	
 	public static void main(String[] args) {

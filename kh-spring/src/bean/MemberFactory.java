@@ -11,7 +11,7 @@ public class MemberFactory {
 	
 	static {
 		try {
-			Reader reader = Resources.getResourceAsReader("momber/config.xml");
+			Reader reader = Resources.getResourceAsReader("member/config.xml");
 			factory = new SqlSessionFactoryBuilder().build(reader);
 			
 		}catch(Exception ex) {

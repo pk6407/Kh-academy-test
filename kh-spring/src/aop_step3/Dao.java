@@ -9,3 +9,4 @@ public interface Dao {
 	public String delete();
 	public String repl();
 }
+

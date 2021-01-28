@@ -4,9 +4,9 @@ package di_step3;
 // 외부 조립기라 표현한다.
 public class Assembler {
 	DB db;
-	
-	public DB getDB() {
-		db = new OracleDB();
+
+	public DB getDb() {
+		db = new YourDB();
 		return db;
 	}
 	

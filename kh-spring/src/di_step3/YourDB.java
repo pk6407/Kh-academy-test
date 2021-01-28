@@ -1,18 +1,16 @@
-package di_anno;
+package di_step3;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
-//개발자 박씨
-public class Database implements DB{
+// 개발자 이씨
+public class YourDB implements DB{
 
+	List<String> kkk = new Vector<String>();
 	@Override
 	public List<String> select(String findStr) {
-		List<String> aaa = new ArrayList<String>();
-		aaa.add("오라클에서 처리된 결과.");
-
-		
-		return aaa;
+		kkk.add("오라클에서 검색된 결과입니다. YourDB...");
+		return kkk;
 	}
 
 	@Override

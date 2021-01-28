@@ -10,7 +10,7 @@ public class Database implements DB{
 	public List<String> select(String findStr) {
 		List<String> aaa = new ArrayList<String>();
 		aaa.add("오라클에서 처리된 결과.");
-		
+
 		
 		return aaa;
 	}

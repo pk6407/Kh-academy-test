@@ -1,9 +1,11 @@
 package aop_step3;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
-public class SaleDao implements Dao{
-	
+public class SaleDao implements Dao {
+
 	public SaleDao() {
 	}
 
@@ -15,12 +17,14 @@ public class SaleDao implements Dao{
 
 	@Override
 	public String insert() {
-		return "SaleDao.insert()";
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public String update() {
-		return "SaleDao.update()";
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -33,7 +37,6 @@ public class SaleDao implements Dao{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
+
 	
 }

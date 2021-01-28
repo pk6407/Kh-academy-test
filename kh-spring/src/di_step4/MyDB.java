@@ -3,13 +3,14 @@ package di_step4;
 import java.util.List;
 import java.util.Vector;
 
+// 개발자 이씨
 public class MyDB implements DB{
 
 	List<String> kkk = new Vector<String>();
 	@Override
 	public List<String> select(String findStr) {
-		// TODO Auto-generated method stub
-		return null;
+		kkk.add("오라클에서 검색된 결과입니다.");
+		return kkk;
 	}
 
 	@Override
