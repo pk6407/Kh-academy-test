@@ -14,7 +14,7 @@
 <body>
 <div id='member'>
 	<h2>회원관리</h2>
-	<form name='frm_member' method='post' class='insert'>
+	<form name='frm_member' id='frm_member' method='post' class='insert'>
 		<label>아이디</label>
 		<input type='text' name='mid' size='10' maxlength='10' required pattern='[\w!\-$]{3,10}'/><br/>
 		

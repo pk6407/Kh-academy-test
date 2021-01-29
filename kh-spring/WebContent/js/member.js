@@ -1,6 +1,6 @@
 /**
  * 회원 관리에 관련된 스크립트
- * 작성자 : it여행자
+ * 작성자 : 김남호
  * 작성일 : 2020.12
  */
 function getID(id){ return document.getElementById(id)}
@@ -29,9 +29,9 @@ var member = function(){
 				pZone.style.display= 'none';
 			
 				if(frm.pwd.value != ''){
-					frm.action = 'deleteR.mem';
 					frm.mid.disabled=false;
-					frm.submit();
+					member.delete('deleteR.mem');
+					
 				}
 			}
 			
@@ -50,9 +50,7 @@ var member = function(){
 			btnPassword.onclick = function(){
 				pZone.style.display= 'none';
 				if(frm.pwd.value != ''){
-					frm.enctype = 'multipart/form-data';
-					frm.action = 'modifyR.mem'; //수정된 정보를 저장
-					frm.submit();
+					member.update = ('modifyR.mem'); //수정된 정보를 저장
 				}
 			}
 		
@@ -63,8 +61,7 @@ var member = function(){
 		btnModify.onclick = function(){
 			var frm = document.frm_member;
 			frm.mid.disabled=false;
-			frm.action = 'modify.mem';//수정화면이동
-			frm.submit();
+			member.select('modify.mem');
 		}
 	}
 	
@@ -135,10 +132,7 @@ var member = function(){
 			
 			*/
 			if(checkFlag){
-				frm.enctype = 'multipart/form-data';
-				frm.action = 'insertR.mem';
-				alert(frm.mid.value);
-				frm.submit();
+				member.update('updateR.mem');
 			}
 		}
 	}
@@ -147,8 +141,7 @@ var member = function(){
 	if(btnSelect != null){
 		btnSelect.onclick = function(){
 			var frm = document.frm_member;
-			frm.action = 'select.mem';
-			frm.submit();
+			member.select('select.mem');
 		}
 	}
 	
@@ -158,41 +151,86 @@ var member = function(){
 			var frm = document.frm_member;
 			frm.action = "select.mem";
 			frm.nowPage.value = 1;
-			frm.submit();
+			member.select();
 		}
 	}
-	
 	
 	//$('#btnInsert').on('click', function(){ ... });
 	if(btnInsert != null){
 		btnInsert.onclick = function(){
 			var frm = document.frm_member;
-			frm.action = 'insert.mem';
-			frm.submit();
+			member.select('insert.mem');
 		}
 	}
 }//end of member()
 
-function goPage(page){
+member.goPage=function(page){
 	var frm = document.frm_member;
-	frm.action = 'select.mem';
 	frm.nowPage.value = page;
-	frm.submit();
+	member.select();
 }
 
-function view(mid){
+member.view=function(mid){
 	var frm = document.frm_member;
-	frm.action = 'view.mem';
 	frm.mid.value = mid;
-	frm.submit();
+	member.select('view.mem');
 }
 
+// spring - > ajax로 호출
+member.select = function(url){
 
+	if(url ==null){
+		url = 'select.mem';
+	}
+	
+	$param = $('#frm_member').serialize();
+	$.ajax({
+		url : url,
+		data : $param,
+		dataType : 'html', /*응답 데이터*/
+		method : 'POST',
+		success : function(data){
+			$('#here').html(data);
+		}
+	});
+}
 
+member.delete = function(url){
 
+	if(url ==null){
+		url = 'select.mem';
+	}
+	
+	$param = $('#frm_member').serialize();
+	$.ajax({
+		url : url,
+		data : $param,
+		dataType : 'html', /*응답 데이터*/
+		method : 'POST',
+		success : function(data){
+			$('#here').html(data);
+		}
+	});
+}
 
-
-
+// 입력하기, 수정하기
+member.update = function(url){
+	var formData = new FormData($('#frm_member')[0]);
+	
+	$.ajax({
+		url : url,
+		data : frmData,
+		dataType : 'html',
+		method : 'POST',
+		enctype : 'multipart/form-data',
+		contentType : false,
+		processData : false,
+		success : function(data){
+			$('#here').html(data);
+		}
+	})
+	
+}
 
 
 

@@ -15,7 +15,7 @@
 <body>
 <div id='member'>
 	<h2>회원관리</h2>
-	<form name='frm_member' method='post' class='update'>
+	<form name='frm_member' id='frm_member' method='post' class='update'>
 		<label>아이디</label>
 		<input type='text' name='mid' size='10' readOnly required value='${vo.mid }'/><br/>
 		

@@ -13,7 +13,7 @@
 <div id='member' class='select'>
 	<h2>회원관리</h2>
 	<div id='findZone'>
-		<form name='frm_member' id='frmMember' method='post' action='insertR.mem'>
+		<form name='frm_member' id='frm_member' method='post' action='insertR.mem'>
 			<input type='button' id='btnInsert' value='입력'/>
 			<div>
 				<input type='search' name='findStr' value='${param.findStr }'/>
@@ -28,7 +28,7 @@
 	
 	<div id='listItems'>
 		<c:forEach var='v' items="${list }">
-			<div class='item' onclick="view('${v.mid}')">
+			<div class='item' onclick="member.view('${v.mid}')">
 				<c:choose>
 					<c:when test="${empty v.photo }">
 						<img src='./image/annony.png' align='left'>
@@ -49,17 +49,17 @@
 
 	<div id='btnZone'>
 		<c:if test="${page.startPage>1 }">
-			<input type='button' value='맨첨' id='btnFirst' onclick='goPage(1)'/>
-			<input type='button' value='이전' id='btnPrev'  onclick='goPage(${page.startPage-1})'/>
+			<input type='button' value='맨첨' id='btnFirst' onclick='member.goPage(1)'/>
+			<input type='button' value='이전' id='btnPrev'  onclick='member.goPage(${page.startPage-1})'/>
 		</c:if>
 	
 		<c:forEach var='i' begin="${page.startPage }" end="${page.endPage }">
-			<input type='button' value='${i }' onclick='goPage(${i })'/>
+			<input type='button' value='${i }' onclick='member.goPage(${i })'/>
 		</c:forEach>	
 
 		<c:if test="${page.endPage<page.totPage }">
-			<input type='button' value='다음' id='btnNext'  onclick='goPage(${page.endPage+1 })'/>
-			<input type='button' value='맨끝' id='btnLast'  onclick='goPage(${page.totPage})'/>
+			<input type='button' value='다음' id='btnNext'  onclick='member.goPage(${page.endPage+1 })'/>
+			<input type='button' value='맨끝' id='btnLast'  onclick='member.goPage(${page.totPage})'/>
 		</c:if>
 	
 	</div>	
