@@ -1,0 +1,11 @@
+@charset "UTF-8";
+#board{
+	background-color: #ff6;
+}
+#board .item{
+	display: table-row;
+}
+#board .item>div{
+	width: 200px;
+	display: table-cell;
+}
