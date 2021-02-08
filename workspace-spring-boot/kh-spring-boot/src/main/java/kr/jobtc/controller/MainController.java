@@ -1,7 +1,5 @@
 package kr.jobtc.controller;
 
- 
-
 import java.util.List;
 
  
@@ -22,25 +20,15 @@ import kr.jobtc.board.BoardVo;
 
 import kr.jobtc.mybatis.BoardService;
 
- 
-
 @RestController
-
 public class MainController {
 
- 
-
-	@Autowired
-
+@Autowired
 	BoardService service;
 
-	
-
-	@RequestMapping("/")
-
+@RequestMapping("/")
 	public ModelAndView index() {
-
-		ModelAndView mv = new ModelAndView();
+	ModelAndView mv = new ModelAndView();
 
 		
 

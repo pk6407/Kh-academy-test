@@ -1,7 +1,7 @@
-chk = function(){
-	console.log('hi............');
-		
+/* index.js */
+
+
+function goURL(url){
+	$('#here').load(url);
+
 }
-
-
-

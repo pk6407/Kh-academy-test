@@ -1,1 +1,48 @@
 @charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#index{
+	width: 1000px;
+	margin:10px auto;
+	border: 1px solid #aaa;
+	min-height: 100px;
+}
+
+#index ul{
+	list-style: none;
+}
+
+#index ul li{
+	width:120px;
+	padding:4px 0;
+	text-align: center;
+}
+
+#index ul li hover{
+	background-color: block;
+}
+
+#index #header{
+	height: 150px;
+	background-color: #ccc;
+}
+#index #menu{
+	padding: 10px;
+	background-color: #bbb;
+}
+
+#index #here{
+	min-height: 200px;
+	padding: 15px;
+}
+
+#index #footer{
+	background-color: #aaa;
+	padding: 40px;
+	text-align: center;
+}

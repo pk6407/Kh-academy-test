@@ -11,11 +11,18 @@
 <body>
 <div id='board'>
 	<h2>일반 공지 게시판</h2>
+	<form name='frm_board' id='frm_board' method='post'>
+		<input type='button' value='공지추가' id='btnInsert' />
+		<input type='text' name='findStr'/>
+		<input type='button' value='검색' id='btnFind' />
+	</form>
+	<hr/>
+	
 	<c:forEach var='vo' items='${list }'>
-			<div>${vo.subject }</div>
+		<div class='item'>
+			<span>${vo.subject }</span>
+		</div>
 	</c:forEach>
-
- 
 
 </div>
 </body>
