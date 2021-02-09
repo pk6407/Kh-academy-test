@@ -11,6 +11,7 @@
  	        crossorigin="anonymous"></script>
  	        
 <script src='js/index.js'></script>
+<script src='js/board.js'></script>
 
 </head>
 <body>

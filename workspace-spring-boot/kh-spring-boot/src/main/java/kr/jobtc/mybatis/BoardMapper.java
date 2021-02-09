@@ -13,5 +13,5 @@ import kr.jobtc.board.Page;
 public interface BoardMapper {
 	// List<String> list = sqlSession.selectList("kr.jobtc.mybatis.BoardMapper.select","hong");
 	public List<BoardVo> select(Page page);
-	
+	public int insert(BoardVo vo);
 }

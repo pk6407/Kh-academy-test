@@ -15,15 +15,19 @@
 		<input type='button' value='공지추가' id='btnInsert' />
 		<input type='text' name='findStr'/>
 		<input type='button' value='검색' id='btnFind' />
+		<input type='hidden' name='nowPage' value='5'/>
+		<input type='hidden' name='serial' value='123'/>
 	</form>
 	<hr/>
 	
 	<c:forEach var='vo' items='${list }'>
 		<div class='item'>
+			<span>${vo.mid }</span>
 			<span>${vo.subject }</span>
 		</div>
 	</c:forEach>
 
 </div>
+<script>brd()</script>
 </body>
 </html>​

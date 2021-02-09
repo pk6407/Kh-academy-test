@@ -1,47 +1,53 @@
-/** 
- * 회원 관리에 관련된 스크립트
- * 작성자 : 김남호
- * 작성일 : 2020.12
- */
-function getID(id){ return document.getElementById(id)}
+/*
+* 게시판에서 사용하는 스크립트
+* date : 2021.02.09
+*/
+//즉시 실행하는 함수
 
-var board = function(){
-	var frm = document.frm_board;
-	var url = 'index.jsp?inc=./board/';	//'board.do?job=
+brd = function(){
+	$('#btnFind').on('click',function(){
+	 var param = $('#frm_board').serialize();
+	 //console.log(param);
 	
-	var btnInsert = getID('btnInsert');
-	var btnSelect = getID('btnSelect');
-	var btnSave = getID('btnSave');
-	var btnFile = getID('btnFind');
+	$.ajax({
+		url : '/bSelect',
+		data : param,
+		dataType : 'html',
+		method : 'post',
+		success : function(data){
+			$('#here').html(data)
+			}
 	
-	if(btnFind != null){
-		btnFind.onclick = function(){
-			frm.nowPage.value = 1;
-			frm.action = url + 'select.jsp';
-			frm.submit();
-		}
-	}
+		});
 	
+	});
+
+	$('#btnInsert').on('click',function(){
+		var param = $('#frm_board').serialize();
+		$('#here').load('/bInsert',param);
+		
+	});
 	
-	if(btnSave != null){
-		btnSave.onclick = function(){
-			frm.action = url + 'result.jsp';
-			frm.submit();
-		}
-	}
+	$('#btnSave').on('click',function(){
+	 var frm = $('#frm_board')[0];
+	 frm.enctype='multipart/form-data';
 	
+	 var data = new FormData(frm);
+	 
+	$.ajax({
+		url : '/bInsertR',
+		data : data,
+		dataType : 'html',
+		method : 'post',
+		processData : false,
+		contentType : false,
+		success : function(data){
+			$('#here').html(data)
+			}
 	
-	if(btnSelect != null){
-		btnSelect.onclick = function(){
-			frm.action = url + 'select.jsp';
-			frm.submit();	
-		}
-	}
+		});
 	
-	if(btnInsert != null){
-		btnInsert.onclick = function(){
-			frm.action = url + 'insert.jsp';
-			frm.submit();
-		}
-	}
-}
+	});
+	
+};
+

@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE mapper
-
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-   
 
 <mapper namespace="kr.jobtc.mybatis.BoardMapper">
 
-	
-
 	<select id='select' resultType='kr.jobtc.board.BoardVo' parameterType="kr.jobtc.board.Page">
-
-		select subject from board where subject like '%${findStr}%'
-
+		select * from board 
+		where subject like '%${findStr}%'
+		or doc like '%${findStr}%'
+		order by serial desc
 	</select>
 
- 
-
- 
-
+	<insert id='insert' parameterType='kr.jobtc.board.BoardVo'>
+		insert all
+		into board(serial, mid, pwd, subject, doc, mdate, hit)
+		values(seq_board.nextval, #{mid} , #{pwd}, #{subject} , #{doc}, sysdate, 0 )
+		<if test="attList != null">
+			<foreach collection="attList" item="att">
+				into boardAtt(serial, pserial, sysfile, orifile)
+				values (getBoardAttSeq(), seq_board.currval, #{att.sysFile}, #{att.oriFile} )
+			</foreach>
+		</if>
+		select * from dual
+	</insert>
+	
+	
 </mapper>
