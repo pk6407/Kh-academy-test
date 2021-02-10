@@ -6,27 +6,26 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
-import kr.jobtc.board.AttVo;
+import kr.jobtc.board.BoardAttVo;
+import kr.jobtc.board.BoardDao;
 import kr.jobtc.board.BoardVo;
-import kr.jobtc.mybatis.BoardService;
+import kr.jobtc.board.Page;
 
-@Controller
+@Service
 public class FileUploadController {
-	String saveDir = "C:\\Users\\asdas\\workspace-spring-boot\\kh-spring-boot\\src\\main\\webapp\\WEB-INF\\upload\\";
+	public static String saveDir = "C:\\Users\\asdas\\workspace-spring-boot\\kh-spring-boot\\src\\main\\webapp\\WEB-INF\\upload\\";
 
-	@Autowired
-	BoardService service;
-	
-	@RequestMapping(value="/bInsertR", method=RequestMethod.POST)
-	public String upload(@RequestParam("attFile") List<MultipartFile> mul, @ModelAttribute BoardVo vo) {
+	public List<BoardAttVo> upload(List<MultipartFile> mul) {
 		String msg = "";
-		List<AttVo> attFiles = new ArrayList<AttVo>();
+		List<BoardAttVo> attFiles = new ArrayList<BoardAttVo>();
 		
 		
 		try {
@@ -35,16 +34,13 @@ public class FileUploadController {
 				System.out.println(oriFile.toString());
 				//file upload
 				m.transferTo(oriFile);
-
-				AttVo v = new AttVo();
-				v.setOriFile(m.getOriginalFilename());
 				
+				BoardAttVo v = new BoardAttVo();
+				v.setOriFile(m.getOriginalFilename());
+
 				attFiles.add(v);
 				
 			}
-			
-			vo.setAttFiles(attFiles);
-			
 			
 			
 		}catch(Exception ex) {
@@ -52,7 +48,7 @@ public class FileUploadController {
 		}
 		
 		
-		return msg;
+		return attFiles;
 	}
 	
 }

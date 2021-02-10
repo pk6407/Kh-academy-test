@@ -7,13 +7,13 @@ public class BoardVo {
 	String mid;
 	String subject;
 	
-	List<AttVo> attFiles = new ArrayList<AttVo>();
+	List<BoardAttVo> attFiles = new ArrayList<BoardAttVo>();
 
-	public List<AttVo> getAttFiles() {
+	public List<BoardAttVo> getAttFiles() {
 		return attFiles;
 	}
 
-	public void setAttFiles(List<AttVo> attFiles) {
+	public void setAttFiles(List<BoardAttVo> attFiles) {
 		this.attFiles = attFiles;
 	}
 

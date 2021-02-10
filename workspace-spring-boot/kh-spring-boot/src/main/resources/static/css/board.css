@@ -1,11 +1,108 @@
 @charset "UTF-8";
+
+/*--------- 공통 부분 -------------- */
 #board{
-	background-color: #ff6;
+	width:100%;
+	padding:20px;
+	box-sizing: border-box;
 }
-#board .item{
-	display: table-row;
+#board span{
+	display: inline-block;
 }
-#board .item>div{
-	width: 200px;
-	display: table-cell;
+
+#board input[type=button]{
+	border-radius: 12px;
+	border : 1px solid #bbb;
+	font-size:0.8em;
+}
+
+#board>form label{
+	display: inline-block;
+	width:60px;
+	text-align: right;
+}
+
+#board #attach_zone{
+	margin-top:7px;
+	display: inline-block;
+	
+}
+/* select -------------------*/
+#board>form>.find{
+	display:inline-block;
+	float:right;
+}
+#board .title{
+	clear:both;
+	background-color:#777;
+	margin-top:3px;
+	color:#fff;
+	padding:2px;
+	box-sizing: border-box;
+}
+#board .no { width:55px;text-align:right;margin-right:15px;font-size:10pt;}
+#board .subject { width:250px;}
+#board .mid{ width:90px;}
+#board .mdate{width:100px;}
+#board .hit{ width:70px;text-align:right}
+
+#board .btns{
+	border-top: 2px solid #aaa;
+	margin-top:3px;
+	padding-top:10px;
+	text-align: center;
+}
+
+
+#board .item:hover{
+	background-color:#eee;
+	cursor: pointer;
+}
+
+/* insert ----------------- */
+#board form input[name=subject]{
+	width: 500px;
+}
+#board form textarea[name=doc]{
+	padding-top:0px;
+	margin-top:4px;
+	width: 500px;
+	height:150px;
+}
+
+/* update ------------*/
+#board form .inner{
+	display: inline-block;
+}
+
+#board .attach_old{
+	position: relative;
+	width:120px;
+	height:100px;
+}
+#board .attach_old input[type=checkbox]{
+	position: absolute;
+	right:3px;
+	bottom:3px;
+	width:30px;
+	height:30px;
+	opacity:0.3;
+}
+/* result -------------*/
+
+#board #msg{
+	width:300px;
+	margin:auto;
+	background-color:#eee;
+	border:2px solid #ccc;
+	box-shadow: 2px 2px 3px #bbb;
+	text-align: center;
+	padding:30px;
+	box-sizing: border-box;
+	border-radius:15px;
+}
+
+#board .frm_msg{
+	margin-top:20px;
+	text-align: center;
 }

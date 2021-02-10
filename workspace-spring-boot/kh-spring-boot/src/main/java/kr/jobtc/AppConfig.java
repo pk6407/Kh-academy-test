@@ -16,20 +16,25 @@ import kr.jobtc.board.BoardVo;
 @Aspect
 @Configuration
 public class AppConfig {
-	
+
 	Logger logger = LoggerFactory.getLogger(AppConfig.class);
 	BoardVo boardVo;
-
-	// <bean id='boardDao' class='kr.jobtc.BoardDao'/>
-	@Bean
-	public BoardDao getBoardDao() {
-		return new BoardDao();
-	}
 	
+	// <bean id='boardDao' class='kr.jobtc.BoardDao'/>
+
 	@Before("execution(* kr.jobtc.board.*.*(..))")
 	public void before(JoinPoint point) {
-		System.out.println("실행 메서드 이전에 처리될 내용");
-		logger.info("1111");
+		//일단 주석~
+		//System.out.println("실행 메서드 이전에 처리될 내용");
+		//logger.info("llll");
 	}
 	
 }
+
+
+
+
+
+
+
+

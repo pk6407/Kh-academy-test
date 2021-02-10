@@ -2,28 +2,99 @@
 <!DOCTYPE mapper
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
+   
 <mapper namespace="kr.jobtc.mybatis.BoardMapper">
-
-	<select id='select' resultType='kr.jobtc.board.BoardVo' parameterType="kr.jobtc.board.Page">
-		select * from board 
-		where subject like '%${findStr}%'
-		or doc like '%${findStr}%'
-		order by serial desc
+	<select id="view" resultType="BoardVo" parameterType="int">
+		select * from board where serial = #{_parameter}
+	</select>
+	
+	
+	<select id="selectAtt" resultType="BoardAttVo" parameterType="int">
+		select * from boardAtt where pserial = #{_parameter}
+	</select>
+	
+	<select id="totListSize" resultType='int' parameterType="Page">
+		select count(serial) from board
+		where subject like '%${findStr}%' or doc like '%${findStr}%'
+	</select>
+	<select id="select" resultType="BoardVo" parameterType="Page">
+		<![CDATA[
+		select * from (
+			select rownum rno, m.* from
+			   ( select b.serial , b.mid, b.mdate, b.hit,
+			    	   lpad(' ', (level-1)*6+1, '&nbsp;&nbsp;') || decode(level, 1, '', '└ ') || b.subject subject,
+			    	(select count(serial) cnt from boardAtt where pserial=b.serial) attCnt 
+				from board b where subject like '%${findStr}%' or doc like '%${findStr}%' 
+				connect by prior serial = pserial
+				start with pserial is null
+				order siblings by serial desc ) m
+		) where rno between #{startNo} and #{endNo}
+		]]>	 
 	</select>
 
-	<insert id='insert' parameterType='kr.jobtc.board.BoardVo'>
+	<select id='replCheck' parameterType='Integer' resultType='Integer'>
+		select count(serial) from board where pserial = #{_parameter}
+	</select>
+	
+
+
+	<insert id="insert" parameterType="BoardVo">
 		insert all
-		into board(serial, mid, pwd, subject, doc, mdate, hit)
-		values(seq_board.nextval, #{mid} , #{pwd}, #{subject} , #{doc}, sysdate, 0 )
+		into board(serial, mid, pwd, subject, doc, mdate, hit) 
+		values(seq_board.nextval, #{mid} , #{pwd},  #{subject} , #{doc}, sysdate, 0 )
 		<if test="attList != null">
 			<foreach collection="attList" item="att">
 				into boardAtt(serial, pserial, sysfile, orifile)
-				values (getBoardAttSeq(), seq_board.currval, #{att.sysFile}, #{att.oriFile} )
+				values(getBoardAttSeq(), seq_board.currval, #{att.sysFile}, #{att.oriFile} )
 			</foreach>
 		</if>
 		select * from dual
 	</insert>
+
+	<insert id="insertRepl" parameterType="BoardVo">
+		insert all
+		into board(serial, mid, pwd, subject, doc, mdate, hit, pSerial) 
+		values(seq_board.nextval, #{mid} , #{pwd},  #{subject} , #{doc}, sysdate, 0, #{pSerial} )
+		<if test="attList != null">
+			<foreach collection="attList" item="att">
+				into boardAtt(serial, pserial, sysfile, orifile)
+				values(getBoardAttSeq(), seq_board.currval, #{att.sysFile}, #{att.oriFile} )
+			</foreach>
+		</if>
+		select * from dual
+	</insert>
+
+	<insert id="insertAtt" parameterType="BoardVo">
+		insert all
+		<foreach collection="attList" item="att">
+			into boardAtt(serial, pserial, sysfile, orifile)
+			values(getBoardAttSeq(), #{serial}, #{att.sysFile}, #{att.oriFile} )
+		</foreach>	
+		select * from dual
+	</insert>
+
+
+	<update id="update" parameterType="BoardVo">
+		update board set subject=#{subject}, doc=#{doc} where serial = #{serial} and pwd=#{pwd}
+	</update>
+
+	<delete id="delete" parameterType="BoardVo">
+		delete from board where serial=#{serial} and pwd=#{pwd}
+	</delete>
 	
+	<delete id="deleteAttPserial" parameterType="Integer">
+		delete from boardAtt where pSerial = #{_parameter}
+	</delete>
 	
-</mapper>
+	<delete id="deleteAtt" parameterType="BoardVo">
+		delete from boardAtt
+		<where>
+			<foreach collection="delFiles" item="att" separator="or">
+				sysfile = #{att.sysFile}
+			</foreach>
+		</where>
+	</delete>
+	
+
+
+</mapper>   
